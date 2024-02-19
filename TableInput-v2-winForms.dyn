@@ -1,0 +1,2061 @@
+{
+  "Uuid": "20d2ba6e-dd3f-402f-a395-7cdc12c66b0e",
+  "IsCustomNode": false,
+  "Description": "",
+  "Name": "TableInput-v2-winForms",
+  "ElementResolver": {
+    "ResolutionMap": {}
+  },
+  "Inputs": [],
+  "Outputs": [],
+  "Nodes": [
+    {
+      "ConcreteType": "GenerativeDesign.Remember, GenerativeDesign.Dynamo.Nodes",
+      "Cache": "[\r\n  [\r\n    \"D1-Project Charechteristic\",\r\n    \"D2-Supply Chain\",\r\n    \"D3-Time\",\r\n    \"D4-Cost\",\r\n    \"D5-Quality\",\r\n    \"D6-Procurement\",\r\n    \"D7-Socio Cultural\"\r\n  ],\r\n  [\r\n    \"D1-Project Charechteristic\",\r\n    \"1 1 1\",\r\n    \"\",\r\n    \"\",\r\n    \"\",\r\n    \"\",\r\n    \"\",\r\n    \"\"\r\n  ],\r\n  [\r\n    \"D2-Supply Chain\",\r\n    \"NA\",\r\n    \"1 1 1\",\r\n    \"\",\r\n    \"\",\r\n    \"\",\r\n    \"\",\r\n    \"\"\r\n  ],\r\n  [\r\n    \"D3-Time\",\r\n    \"NA\",\r\n    \"NA\",\r\n    \"1 1 1\",\r\n    \"\",\r\n    \"\",\r\n    \"\",\r\n    \"\"\r\n  ],\r\n  [\r\n    \"D4-Cost\",\r\n    \"NA\",\r\n    \"NA\",\r\n    \"NA\",\r\n    \"1 1 1\",\r\n    \"\",\r\n    \"\",\r\n    \"\"\r\n  ],\r\n  [\r\n    \"D5-Quality\",\r\n    \"NA\",\r\n    \"NA\",\r\n    \"NA\",\r\n    \"NA\",\r\n    \"1 1 1\",\r\n    \"\",\r\n    \"\"\r\n  ],\r\n  [\r\n    \"D6-Procurement\",\r\n    \"NA\",\r\n    \"NA\",\r\n    \"NA\",\r\n    \"NA\",\r\n    \"NA\",\r\n    \"1 1 1\",\r\n    \"\"\r\n  ],\r\n  [\r\n    \"D7-Socio Cultural\",\r\n    \"NA\",\r\n    \"NA\",\r\n    \"NA\",\r\n    \"NA\",\r\n    \"NA\",\r\n    \"NA\",\r\n    \"1 1 1\"\r\n  ]\r\n]",
+      "Id": "5cabe74149ea4ea3917022026cf9ff41",
+      "NodeType": "ExtensionNode",
+      "Inputs": [
+        {
+          "Id": "3e22669e6fc344da8c851fc4ce28359d",
+          "Name": ">",
+          "Description": "Data to sample and store in the file.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "26615fb4aba04d6c98da0d7a142f8bbf",
+          "Name": ">",
+          "Description": "Data",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Store data passing through this node to the Dynamo file. Return the stored data if the input is null."
+    },
+    {
+      "ConcreteType": "DSRevitNodesUI.Categories, DSRevitNodesUI",
+      "SelectedIndex": 240,
+      "SelectedString": "OST_Floors",
+      "Id": "e8b9386864724297a5d8f02ff959f95d",
+      "NodeType": "ExtensionNode",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "19f690f084fe4560a6862953746608db",
+          "Name": "Category",
+          "Description": "The selected Category.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "All built-in categories."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Function, DynamoCore",
+      "FunctionSignature": "65f93a80-674c-4a98-9d0c-db3a138287e5",
+      "FunctionType": "Graph",
+      "Id": "1ca6424435ad4a0caf9416c04128dab9",
+      "NodeType": "FunctionNode",
+      "Inputs": [
+        {
+          "Id": "11a9220684bf432da1f9dba1bdc2f99d",
+          "Name": "category",
+          "Description": " Works with categories, BuiltInCategories and BuiltInCategories as strings\n\nvar[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 1,
+          "UseLevels": true,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "b5ea79b8a9a34a5fa3ab2ba8d174528e",
+          "Name": "toggle",
+          "Description": "bool\nDefault value : true",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "398c2d34c45c45c09f44d35661a3f97b",
+          "Name": "docOrRevitLinkInstance",
+          "Description": " Use only if you want to query a linked model\n\nvar\nDefault value : null",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "9b5e275702c34ee5af93e7991c3c6b1e",
+          "Name": "familyTypes",
+          "Description": "return value",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Gets all family types/symbols of a given category in the model."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "Id": "0df3b598db904079a7226e853e75e0c3",
+      "NodeType": "CodeBlockNode",
+      "Inputs": [
+        {
+          "Id": "670ecc86f7fb483f9a29b9aa2c8e4a58",
+          "Name": "userIN",
+          "Description": "userIN",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "7e0004a79cc140bc8648a12e1ba3afef",
+          "Name": "qualitativeAssessment",
+          "Description": "qualitativeAssessment",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "f0dabc5aff0d4604b7faca431aa460f5",
+          "Name": "",
+          "Description": "Value of expression at line 1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "9c9c9034db304f1fb13c70b829bdf4b9",
+          "Name": "",
+          "Description": "families",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "c213a20f956d40b4886c6dbaea2e549f",
+          "Name": "",
+          "Description": "zipCode",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "29a125d6797b48e1b57b67a18600edb1",
+          "Name": "",
+          "Description": "Value of expression at line 4",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly",
+      "Code": "userIN;\nfamilies=userIN[0];\nzipCode=userIN[1];\nqualitativeAssessment;"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "Id": "44f2ce1ca4de418bb85ef540e71e34e7",
+      "NodeType": "FunctionNode",
+      "Inputs": [
+        {
+          "Id": "54b22b81bbc94a819b0981eee6af460f",
+          "Name": "list",
+          "Description": "List to flatten.\n\nvar[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "cbad7ee4fdb9437a9da63f0e25898e87",
+          "Name": "amount",
+          "Description": "Layers of list nesting to remove (-1 will remove all list nestings)\n\nint\nDefault value : -1",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "b77bf10863fb4720a48c0cdca972b073",
+          "Name": "list",
+          "Description": "Flattened list by amount",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "FunctionSignature": "DSCore.List.Flatten@var[]..[],int",
+      "Replication": "Auto",
+      "Description": "Flattens a nested list of lists by a certain amount.\n\nList.Flatten (list: var[]..[], amount: int = -1): var[]..[]"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "Id": "2af1e349752c4e3aa8cfb85306045c4a",
+      "NodeType": "FunctionNode",
+      "Inputs": [
+        {
+          "Id": "c30652f88db34dbc83bdcbb755ff71ad",
+          "Name": "element",
+          "Description": "Revit.Elements.Element",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "effd1b8bdffc4a79904cb1ef745a5059",
+          "Name": "parameterName",
+          "Description": "The name of the parameter whose value you want to obtain.\n\nstring",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "94329edc2ea7498b81fa7d5c57bf09eb",
+          "Name": "var[]..[]",
+          "Description": "var[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "FunctionSignature": "Revit.Elements.Element.GetParameterValueByName@string",
+      "Replication": "Auto",
+      "Description": "Get the value of one of the element's parameters.\n\nElement.GetParameterValueByName (parameterName: string): var[]..[]"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "Id": "7508f124cf214318b9f743955f1a9be3",
+      "NodeType": "CodeBlockNode",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "f76515410b6a4e9b9e75ce4997fd35d9",
+          "Name": "",
+          "Description": "Value of expression at line 1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly",
+      "Code": "\"Area\";"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "Id": "9b7e2d4e6f1e480095ae0d894caaa892",
+      "NodeType": "FunctionNode",
+      "Inputs": [
+        {
+          "Id": "3d62148105264ca28419766d8d2655e1",
+          "Name": "list",
+          "Description": "List to flatten.\n\nvar[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "c056119fc2af4ba7b401fc0ae201cae8",
+          "Name": "amount",
+          "Description": "Layers of list nesting to remove (-1 will remove all list nestings)\n\nint\nDefault value : -1",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "e28fbfbeaee64f169c508b9cb292ca6d",
+          "Name": "list",
+          "Description": "Flattened list by amount",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "FunctionSignature": "DSCore.List.Flatten@var[]..[],int",
+      "Replication": "Auto",
+      "Description": "Flattens a nested list of lists by a certain amount.\n\nList.Flatten (list: var[]..[], amount: int = -1): var[]..[]"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "Id": "5516977294254cccac87d11ba17e723e",
+      "NodeType": "FunctionNode",
+      "Inputs": [
+        {
+          "Id": "65f2d15c425e449f992005e97891c7b4",
+          "Name": "values",
+          "Description": "Numbers to add to sum\n\ndouble[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "202b99c1f9f443bbbb8095f17f6d086e",
+          "Name": "double",
+          "Description": "The sum of the values",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "FunctionSignature": "DSCore.Math.Sum@double[]",
+      "Replication": "Auto",
+      "Description": "Find the sum of a series of numbers\n\nMath.Sum (values: double[]): double"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Function, DynamoCore",
+      "FunctionSignature": "25478d38-ba0e-4dc7-826e-fe45f3f811c6",
+      "FunctionType": "Graph",
+      "Id": "54ada116cf9143369b6b65fb4b10bf29",
+      "NodeType": "FunctionNode",
+      "Inputs": [
+        {
+          "Id": "76199d6858474a3994b748ac5552a18a",
+          "Name": "familyType",
+          "Description": "var[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "fa1e8e578fb14c8daf4025af769f99ab",
+          "Name": "toggle",
+          "Description": "bool\nDefault value : true",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "670aa6f72f034a3e935c8f8f91567cb6",
+          "Name": "docOrRevitLinkInstance",
+          "Description": " Use only if you want to query a linked model\n\nvar\nDefault value : null",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "ff7f55e25f46438f961d59f604e1cab1",
+          "Name": "elements",
+          "Description": "return value",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Unlike the built-in  node, this node retrieves all placed instances of a given loadable *or* system family type"
+    },
+    {
+      "ConcreteType": "PythonNodeModels.PythonNode, PythonNodeModels",
+      "Code": "# Load the Python Standard and DesignScript Libraries\r\nimport sys\r\nimport clr\r\nclr.AddReference('ProtoGeometry')\r\nclr.AddReference('System.Windows.Forms')\r\nclr.AddReference('System.Drawing')\r\nfrom Autodesk.DesignScript.Geometry import *\r\nfrom System.Windows.Forms import Form, Label, Button, TextBox, ComboBox, TreeNode, TreeView,PictureBox,PictureBoxSizeMode\r\nfrom System.Drawing import Point, Size,Image\r\n# The inputs to this node will be stored as a list in the IN variables.\r\ndataEnteringNode = IN\r\n\r\n# Place your code below this line\r\nfamilyList=IN[0]\r\nfamilyName=[str(x) for x in familyList]\r\nfamilyDict=dict(zip(familyName,familyList))\r\n\r\nclass MyForm(Form):\r\n    def __init__(self):\r\n        # Initialize the form\r\n        self.Text = \"FAHP User Input Interface\"\r\n        self.ClientSize = Size(350, 400)\r\n\r\n        # Create a label for the text input\r\n        self.label = Label()\r\n        self.label.Text = \"Enter Project ZipCode:\"\r\n        self.label.Location = Point(20, 20)\r\n        self.label.AutoSize = True\r\n        self.Controls.Add(self.label)\r\n\r\n        # Create a textbox for the user input\r\n        self.textbox = TextBox()\r\n        self.textbox.Location = Point(20, 40)\r\n        self.textbox.Size = Size(200, 20)\r\n        self.Controls.Add(self.textbox)\r\n\r\n        # Create a label for the dropdown\r\n        #self.dropdown_label = Label()\r\n        #self.dropdown_label.Text = \"Select an option:\"\r\n        #self.dropdown_label.Location = Point(20, 80)\r\n        #self.dropdown_label.AutoSize = True\r\n        #self.Controls.Add(self.dropdown_label)\r\n\r\n        # Create a dropdown (combobox) for the user input\r\n        #self.dropdown = ComboBox()\r\n        #self.dropdown.Location = Point(20, 110)\r\n        #self.dropdown.Size = Size(200, 20)\r\n        #self.dropdown.Items.AddRange([\"Option 1\", \"Option 2\", \"Option 3\"])  # Predefined options\r\n        #self.Controls.Add(self.dropdown)\r\n\r\n        # Create a label for the treeview\r\n        self.tree_label = Label()\r\n        self.tree_label.Text = \"Select Main Floor Families:\"\r\n        self.tree_label.Location = Point(20, 80)\r\n        self.tree_label.AutoSize = True\r\n        self.Controls.Add(self.tree_label)\r\n\r\n        # Create a treeview for the user input\r\n        self.treeview = TreeView()\r\n        self.treeview.Location = Point(20, 100)\r\n        self.treeview.Size = Size(300, 200)\r\n        self.treeview.CheckBoxes = True  # Enable checkboxes for multiple selections\r\n        for family in familyName:\r\n           self.treeview.Nodes.Add(family)  # Add a root node\r\n        \r\n        self.Controls.Add(self.treeview)\r\n\r\n        # Create a button to submit the input\r\n        self.submit_button = Button()\r\n        self.submit_button.Text = \"Submit\"\r\n        self.submit_button.Location = Point(20, 320)\r\n        self.submit_button.Click += self.submit_button_click\r\n        self.Controls.Add(self.submit_button)\r\n            \r\n        #Create Logo box\r\n        path=r\"D:\\Nariman Saze\\narbiman2.png\"\r\n        photo_path = path  \r\n        photo_image = Image.FromFile(photo_path)\r\n\r\n        # Create a picture box to display the photo\r\n        self.logo_box = PictureBox()\r\n        self.logo_box.Location = Point(220,300)\r\n        self.logo_box.Size=Size(100,100)\r\n        self.logo_box.Image = photo_image\r\n        self.logo_box.SizeMode = PictureBoxSizeMode.Zoom\r\n        \r\n        self.Controls.Add(self.logo_box)\r\n            \r\n    def submit_button_click(self, sender, args):\r\n        # Event handler for submit button click\r\n        global selected_items,zipCode\r\n        selected_items=[]\r\n        # Clear the list before adding new items\r\n        selected_items.clear()\r\n        # Get selected nodes from the treeview recursively\r\n        self.get_selected_nodes(self.treeview.Nodes)\r\n        zipCode = self.textbox.Text\r\n        self.Close()\r\n    def get_selected_nodes(self, nodes):\r\n        # Recursively iterate through all nodes and their children\r\n        for node in nodes:\r\n            if node.Checked:\r\n                selected_items.append(familyDict[node.Text])\r\n            self.get_selected_nodes(node.Nodes)\r\n\r\n\r\n# Create an instance of the form\r\nform = MyForm()\r\nform.ShowDialog()\r\n\r\n\r\n# Assign your output to the OUT variable.\r\nOUT = selected_items,zipCode",
+      "Engine": "CPython3",
+      "EngineName": "CPython3",
+      "VariableInputPorts": true,
+      "Id": "ec34d07ed6214003bb72067bb0394ba4",
+      "NodeType": "PythonScriptNode",
+      "Inputs": [
+        {
+          "Id": "63f46ba421de44b39d20fe117c7c8561",
+          "Name": "IN[0]",
+          "Description": "Input #0",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "eea37ecbc105439391094d8a725af2dc",
+          "Name": "IN[1]",
+          "Description": "Input #1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "2e3fcd2733cd427888e9d983496ffff7",
+          "Name": "OUT",
+          "Description": "Result of the python script",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Runs an embedded Python script."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "Id": "b18497d46c004460af21b1dce3d3a822",
+      "NodeType": "FunctionNode",
+      "Inputs": [
+        {
+          "Id": "fc61c42dec8449e3b9f2711dddf4dfef",
+          "Name": "list",
+          "Description": "List to flatten.\n\nvar[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "5ca1a8c2bd8b4b139ad61ea37ca04e34",
+          "Name": "amount",
+          "Description": "Layers of list nesting to remove (-1 will remove all list nestings)\n\nint\nDefault value : -1",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "2e39db88064344c58ecb9ed9ef3edc0e",
+          "Name": "list",
+          "Description": "Flattened list by amount",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "FunctionSignature": "DSCore.List.Flatten@var[]..[],int",
+      "Replication": "Auto",
+      "Description": "Flattens a nested list of lists by a certain amount.\n\nList.Flatten (list: var[]..[], amount: int = -1): var[]..[]"
+    },
+    {
+      "ConcreteType": "PythonNodeModels.PythonNode, PythonNodeModels",
+      "Code": "# Load the Python Standard and DesignScript Libraries\r\nimport sys\r\nimport clr\r\nclr.AddReference('ProtoGeometry')\r\nfrom Autodesk.DesignScript.Geometry import *\r\n\r\n# The inputs to this node will be stored as a list in the IN variables.\r\ndataEnteringNode = IN\r\n\r\n# Place your code below this line\r\nimport clr\r\nclr.AddReference('System.Windows.Forms')\r\nclr.AddReference('System.Drawing')\r\n\r\nimport pandas as pd\r\nfrom System.Windows.Forms import Form, Button, DataGridView, DataGridViewAutoSizeColumnsMode,  DataGridViewTextBoxColumn,Label,PictureBox,FormStartPosition,PictureBoxSizeMode,DockStyle\r\nfrom System.Drawing import Point, Size, Image, Bitmap,Font,FontFamily\r\ndef help(path):\r\n   class PhotoForm(Form):\r\n        def __init__(self):\r\n            # Initialize the photo form\r\n            self.Text = \"Photo Form\"\r\n            self.ClientSize = Size(800, 600)\r\n            #self.StartPosition = FormStartPosition.CenterScreen\r\n\r\n            # Load the photo\r\n            photo_path = path  # Update with the path to your photo\r\n            photo_image = Image.FromFile(photo_path)\r\n\r\n            # Create a picture box to display the photo\r\n            self.picture_box = PictureBox()\r\n            self.picture_box.Image = photo_image\r\n            self.picture_box.SizeMode = PictureBoxSizeMode.Zoom\r\n            self.picture_box.Dock = DockStyle.Fill\r\n            self.Controls.Add(self.picture_box)\r\n   photo_form = PhotoForm()\r\n   return(photo_form)\r\ndef create_form_with_table(column_names):\r\n    class DynamicForm(Form):\r\n        def __init__(self):\r\n            # Initialize the form\r\n            self.Text = \"FAHP User Input Interface\"\r\n            self.ClientSize = Size((len(column_names)+1)*150, len(column_names)*28+170)\r\n            \r\n            # Create a label for the whole menu\r\n            self.dropdown_label = Label()\r\n            self.dropdown_label.Text = \"Select Importance of Each Criteria :\"\r\n            self.dropdown_label.Location = Point(20, 20)\r\n            self.dropdown_label.AutoSize = True\r\n            font = Font(FontFamily.GenericSansSerif,\r\n            8, 2) \r\n            \r\n            self.dropdown_label.Font=font\r\n            self.Controls.Add(self.dropdown_label)\r\n\r\n            # Create a DataGridView for table input\r\n            self.dataGridView = DataGridView()\r\n            self.dataGridView.Location = Point(20, 40)\r\n            self.dataGridView.Size = Size((len(column_names)+1)*140, len(column_names)*28+20)\r\n            self.dataGridView.AutoGenerateColumns = False\r\n\r\n            # Define columns based on column_names\r\n            for i, row in enumerate(self.dataGridView.Rows):\r\n                row.HeaderCell.Value = column_names[i]\r\n            column = DataGridViewTextBoxColumn()\r\n            column.HeaderText = \" \"\r\n            self.dataGridView.Columns.Add(column)    \r\n            for col_name in column_names:\r\n                column = DataGridViewTextBoxColumn()\r\n                column.HeaderText = col_name\r\n                self.dataGridView.Columns.Add(column)\r\n\r\n            self.dataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill\r\n            self.Controls.Add(self.dataGridView)\r\n                    # Set default values for some cells\r\n            global row_values\r\n            for i in range(len(column_names)):\r\n                row_values=[\"\" for _ in range(len(column_names))]\r\n                row_values[i]=\"1 1 1\"\r\n                row_values[0:i]=[\"NA\"]*i\r\n                row_values.insert(0, column_names[i])\r\n                self.dataGridView.Rows.Add(row_values)\r\n\r\n            # Set row headers visible and read-only\r\n            self.dataGridView.RowHeadersVisible = True\r\n            \r\n            #for row in self.dataGridView.Rows:\r\n             #   row.HeaderCell.ReadOnly = True\r\n            # Create a button to submit the input\r\n            self.submit_button = Button()\r\n            self.submit_button.Text = \"Submit\"\r\n            self.submit_button.Location = Point((len(column_names)+1)*130, len(column_names)*28+80)\r\n            self.submit_button.Click += self.submit_button_click\r\n            self.Controls.Add(self.submit_button)\r\n            \r\n            # Create Help buttons\r\n            self.help_button1 = Button()\r\n            self.help_button1.Text = \"Factors' Definition\"\r\n            self.help_button1.Location = Point(25, len(column_names)*28+80)\r\n            self.help_button1.Size=Size(135,20)\r\n            self.help_button1.Click += self.help_button1_click\r\n            self.Controls.Add(self.help_button1)\r\n\r\n            self.help_button2 = Button()\r\n            self.help_button2.Text = \"Scoring Assistance\"\r\n            self.help_button2.Location = Point(25, len(column_names)*28+100)\r\n            self.help_button2.Size=Size(135,20)\r\n            self.help_button2.Click += self.help_button2_click\r\n            self.Controls.Add(self.help_button2)\r\n            \r\n            #Create Information box\r\n      \r\n            self.dropdown_label = Label()\r\n            self.dropdown_label.Text = \"BIM Generated Information\"\r\n            self.dropdown_label.Location = Point(25, len(column_names)*28+100+30)\r\n            self.dropdown_label.AutoSize = True\r\n            font = Font(FontFamily.GenericSansSerif,\r\n            8, 2) \r\n            \r\n            self.dropdown_label.Font=font\r\n            self.Controls.Add(self.dropdown_label)\r\n\r\n            # Create a DataGridView for table input\r\n\r\n\r\n            \r\n\r\n        def submit_button_click(self, sender, args):\r\n            # Event handler for submit button click\r\n            global data\r\n            data = [IN[0]]\r\n            # Iterate through rows in DataGridView and retrieve cell values\r\n            for row in self.dataGridView.Rows:\r\n                values = []\r\n                for cell in row.Cells:\r\n                    values.append(cell.Value)\r\n                data.append(values)\r\n            self.Close()\r\n        def help_button1_click(self, sender, args):\r\n            #Event handler for help button 1 click\r\n               \r\n            photo_form = help(r\"D:\\projects\\BIM-Dynamo\\MehdiPour\\help\\D1.jpg\")\r\n            photo_form.Show()\r\n            photo_form.Owner = self\r\n\r\n        def help_button2_click(self, sender, args):\r\n            # Event handler for button 2\r\n            photo_form = help(r\"D:\\projects\\BIM-Dynamo\\MehdiPour\\help\\D1.jpg\")\r\n            photo_form.Show()\r\n            photo_form.Owner = self\r\n            \r\n            \r\n\r\n\r\n    # Create an instance of the dynamic form\r\n    form = DynamicForm()\r\n    form.ShowDialog()\r\n    \r\n    \r\n\r\n\r\n# Example usage:\r\nl=1\r\ncolumnNames=IN[0]\r\ncreate_form_with_table(IN[0])\r\n\r\n# Assign your output to the OUT variable.\r\nOUT = data[0:-1]",
+      "Engine": "CPython3",
+      "EngineName": "CPython3",
+      "VariableInputPorts": true,
+      "Id": "1384a09c441247739f4f683e79ba407b",
+      "NodeType": "PythonScriptNode",
+      "Inputs": [
+        {
+          "Id": "c858bbfd4e5c4f2395782573674a0536",
+          "Name": "IN[0]",
+          "Description": "Input #0",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "a8e1fefee27e4255965f593ea4982bee",
+          "Name": "OUT",
+          "Description": "Result of the python script",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Runs an embedded Python script."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "Id": "8ea396139b8d49a8bb00bd6ef87e7699",
+      "NodeType": "CodeBlockNode",
+      "Inputs": [
+        {
+          "Id": "c5147c99eb9b4f62b4dabdd9eb3f8bb1",
+          "Name": "area",
+          "Description": "area",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "e6b40cb5111b41c5a7a87e230d9846d3",
+          "Name": "",
+          "Description": "Value of expression at line 1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "d04ec5c975e445dfb092f98b99a7aa78",
+          "Name": "",
+          "Description": "Value of expression at line 2",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly",
+      "Code": "[\"D1-Project Charechteristic\",\"D2-Supply Chain\",\"D3-Time\",\"D4-Cost\",\"D5-Quality\",\"D6-Procurement\",\"D7-Socio Cultural\"];\narea;"
+    },
+    {
+      "ConcreteType": "PythonNodeModels.PythonNode, PythonNodeModels",
+      "Code": "# Load the Python Standard and DesignScript Libraries\r\nimport sys\r\nimport clr\r\nclr.AddReference('ProtoGeometry')\r\nfrom Autodesk.DesignScript.Geometry import *\r\n\r\n# The inputs to this node will be stored as a list in the IN variables.\r\ndataEnteringNode = IN\r\n\r\n# Place your code below this line\r\nfrom System.Windows.Forms import Form, Button, DataGridView, DataGridViewAutoSizeColumnsMode,  DataGridViewTextBoxColumn,Label,PictureBox,FormStartPosition,PictureBoxSizeMode,DockStyle\r\nfrom System.Drawing import Point, Size, Image, Bitmap,Font,FontFamily\r\n\r\nmain_criteria_name=[\"D1-Project Charechteristic\",\"D2-Supply Chain\",\"D3-Time\",\"D4-Cost\",\"D5-Quality\",\"D6-Procurement\",\"D7-Socio Cultural\"]\r\narea=IN[2]\r\ndef help(path):\r\n   class PhotoForm(Form):\r\n        def __init__(self):\r\n            # Initialize the photo form\r\n            self.Text = \"Photo Form\"\r\n            self.ClientSize = Size(800, 600)\r\n            #self.StartPosition = FormStartPosition.CenterScreen\r\n\r\n            # Load the photo\r\n            photo_path = path  # Update with the path to your photo\r\n            photo_image = Image.FromFile(photo_path)\r\n\r\n            # Create a picture box to display the photo\r\n            self.picture_box = PictureBox()\r\n            self.picture_box.Image = photo_image\r\n            self.picture_box.SizeMode = PictureBoxSizeMode.Zoom\r\n            self.picture_box.Dock = DockStyle.Fill\r\n            self.Controls.Add(self.picture_box)\r\n   photo_form = PhotoForm()\r\n   return(photo_form)\r\ndef create_form_with_table(column_names,mainFactorIndex):\r\n    \r\n    \r\n    class DynamicForm(Form):\r\n        def __init__(self):\r\n            # Initialize the form\r\n            self.Text = \"FAHP User Input Interface\"\r\n            self.ClientSize = Size((len(column_names)+1)*130+80, len(column_names)*28+240)\r\n            \r\n            # Create a label for the whole menu\r\n            self.dropdown_label = Label()\r\n            print(mainFactorIndex)\r\n            self.dropdown_label.Text = main_criteria_name[mainFactorIndex]\r\n            \r\n            self.dropdown_label.Location = Point(20, 20)\r\n            self.dropdown_label.AutoSize = True\r\n            font = Font(FontFamily.GenericSansSerif,\r\n            8, 1) \r\n            \r\n            self.dropdown_label.Font=font\r\n            \r\n            self.Controls.Add(self.dropdown_label)\r\n\r\n            # Create a DataGridView for table input\r\n            self.dataGridView = DataGridView()\r\n            self.dataGridView.Location = Point(20, 40)\r\n            self.dataGridView.Size = Size((len(column_names)+1)*130+40, len(column_names)*28+20)\r\n            self.dataGridView.AutoGenerateColumns = False\r\n\r\n            # Define columns based on column_names\r\n            for i, row in enumerate(self.dataGridView.Rows):\r\n                row.HeaderCell.Value = column_names[i]\r\n            column = DataGridViewTextBoxColumn()\r\n            column.HeaderText = \" \"\r\n            self.dataGridView.Columns.Add(column)    \r\n            for col_name in column_names:\r\n                column = DataGridViewTextBoxColumn()\r\n                column.HeaderText = col_name\r\n                self.dataGridView.Columns.Add(column)\r\n\r\n            self.dataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill\r\n            self.Controls.Add(self.dataGridView)\r\n                    # Set default values for some cells\r\n            global row_values\r\n            for i in range(len(column_names)):\r\n                row_values=[\"\" for _ in range(len(column_names))]\r\n                row_values[i]=\"1 1 1\"\r\n                row_values[0:i]=[\"NA\"]*i\r\n                row_values.insert(0, column_names[i])\r\n                self.dataGridView.Rows.Add(row_values)\r\n\r\n            # Set row headers visible and read-only\r\n            self.dataGridView.RowHeadersVisible = True\r\n            \r\n            #for row in self.dataGridView.Rows:\r\n             #   row.HeaderCell.ReadOnly = True\r\n            # Create a button to submit the input\r\n            self.submit_button = Button()\r\n            self.submit_button.Text = \"Submit\"\r\n            self.submit_button.Location = Point((len(column_names)+1)*130+80-100, len(column_names)*28+80)\r\n            self.submit_button.Click += self.submit_button_click\r\n            self.Controls.Add(self.submit_button)\r\n            \r\n            # Create Help buttons\r\n            self.help_button1 = Button()\r\n            self.help_button1.Text = \"Factors' Definition\"\r\n            self.help_button1.Location = Point(25, len(column_names)*28+80)\r\n            self.help_button1.Size=Size(135,20)\r\n            self.help_button1.Click += self.help_button1_click\r\n            self.Controls.Add(self.help_button1)\r\n\r\n            self.help_button2 = Button()\r\n            self.help_button2.Text = \"Scoring Assistance\"\r\n            self.help_button2.Location = Point(25, len(column_names)*28+100)\r\n            self.help_button2.Size=Size(135,20)\r\n            self.help_button2.Click += self.help_button2_click\r\n            self.Controls.Add(self.help_button2)\r\n\r\n            #Create Information box\r\n      \r\n            self.biminfo_label = Label()\r\n            self.biminfo_label.Text = \" \"\r\n            if \"F1\" in column_names:\r\n                self.biminfo_label.Text = \"Offsite construction is advantageous for projects with substantial building size. The total Area of this project is \"+str(round(area))+\"Sf\"\r\n            elif \"F11\" in column_names:\r\n                self.biminfo_label.Text = \"Cost Performance is a critical parameter in off-site construction techniques. The Approximate Cost of this project is: \"+str(round(area)*100)+\"$\"\r\n            self.biminfo_label.Location = Point(25, len(column_names)*28+100+30)\r\n            self.biminfo_label.Size=Size((len(column_names)+1)*115-40,80)\r\n            font = Font(FontFamily.GenericSansSerif,\r\n            8, 2) \r\n            \r\n            self.biminfo_label.Font=font\r\n            self.Controls.Add(self.biminfo_label)\r\n            #Create Logo box\r\n            path=r\"D:\\Nariman Saze\\narbiman2.png\"\r\n            photo_path = path  \r\n            photo_image = Image.FromFile(photo_path)\r\n\r\n            # Create a picture box to display the photo\r\n            self.logo_box = PictureBox()\r\n            self.logo_box.Location = Point((len(column_names)+1)*130+80-100-15, len(column_names)*28+120)\r\n            self.logo_box.Size=Size(100,100)\r\n            self.logo_box.Image = photo_image\r\n            self.logo_box.SizeMode = PictureBoxSizeMode.Zoom\r\n        \r\n            self.Controls.Add(self.logo_box)\r\n            \r\n\r\n        def submit_button_click(self, sender, args):\r\n            # Event handler for submit button click\r\n            global data\r\n            data = [[\"\"]+column_names]\r\n            # Iterate through rows in DataGridView and retrieve cell values\r\n            for row in self.dataGridView.Rows:\r\n                values = []\r\n                for cell in row.Cells:\r\n                    values.append(cell.Value)\r\n                data.append(values)\r\n            self.Close()\r\n        def help_button1_click(self, sender, args):\r\n            #Event handler for help button 1 click\r\n               \r\n            photo_form = help(r\"D:\\projects\\BIM-Dynamo\\MehdiPour\\help\\D\"+str(mainFactorIndex)+\".jpg\")\r\n            photo_form.Show()\r\n            photo_form.Owner = self\r\n\r\n        def help_button2_click(self, sender, args):\r\n            # Event handler for button 2\r\n            photo_form = help(r\"D:\\projects\\BIM-Dynamo\\MehdiPour\\help\\D1.jpg\")\r\n            photo_form.Show()\r\n            photo_form.Owner = self\r\n            \r\n\r\n\r\n    # Create an instance of the dynamic form\r\n    form = DynamicForm()\r\n    form.ShowDialog()\r\n\r\n# Example usage:\r\nsubfactors=[[1,2],[3,4,5,6],[7,8,9,10],[11,12,13,14,15],[16,17,18],[19],[20,21]]\r\ninputList=[]\r\ni=0\r\nfor main in subfactors:\r\n    column_names=[\"F\"+str(x) for x in main]\r\n    create_form_with_table(column_names,i)\r\n    data=data[:-1]\r\n    inputList.append(data)\r\n    i=i+1\r\n\r\na=1\r\n# Assign your output to the OUT variable.\r\nOUT = inputList",
+      "Engine": "CPython3",
+      "EngineName": "CPython3",
+      "VariableInputPorts": true,
+      "Id": "7ecb2d38b38a4cb1a6bde7f490150402",
+      "NodeType": "PythonScriptNode",
+      "Inputs": [
+        {
+          "Id": "da8df9e7a16749989817b80621c4b39b",
+          "Name": "IN[0]",
+          "Description": "Input #0",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "058516bcde594f85abf1f899f13c929f",
+          "Name": "IN[1]",
+          "Description": "Input #1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "4252d1dd32ce48dd8b2f61c530683535",
+          "Name": "IN[2]",
+          "Description": "Input #2",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "1593e638f2e94e2eae20378188ffa33c",
+          "Name": "OUT",
+          "Description": "Result of the python script",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Runs an embedded Python script."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "Id": "e73fdce8fe2b425ebde40e9a2171e620",
+      "NodeType": "CodeBlockNode",
+      "Inputs": [
+        {
+          "Id": "a8ec6c003fd04db99d76d8155749e5ce",
+          "Name": "In_D",
+          "Description": "In_D",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "a8759dea7b2b46e69278c9aece399698",
+          "Name": "",
+          "Description": "a",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "d35d4ec2ad644dc09033a52d3293f4aa",
+          "Name": "",
+          "Description": "Value of expression at line 2",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "75521a1f12a84f0fb56af65a7ec1859e",
+          "Name": "",
+          "Description": "Value of expression at line 3",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly",
+      "Code": "a=In_D;\n[\"F1\",\"F2\"];\n[\"F3\",\"F4\",\"F5\",\"F6\"];"
+    },
+    {
+      "ConcreteType": "PythonNodeModels.PythonNode, PythonNodeModels",
+      "Code": "# Load the Python Standard and DesignScript Libraries\r\nimport sys\r\nimport clr\r\nclr.AddReference('ProtoGeometry')\r\nfrom Autodesk.DesignScript.Geometry import *\r\n\r\n# The inputs to this node will be stored as a list in the IN variables.\r\ndataEnteringNode = IN\r\n\r\n# Place your code below this line\r\nimport clr\r\nclr.AddReference('System.Windows.Forms')\r\nclr.AddReference('System.Drawing')\r\n\r\nimport pandas as pd\r\nfrom System.Windows.Forms import Form, Button, DataGridView, DataGridViewAutoSizeColumnsMode, DataGridViewTextBoxColumn,Label,PictureBox,FormStartPosition,PictureBoxSizeMode,DockStyle\r\n\r\nfrom System.Drawing import Point, Size, Image, Bitmap,Font,FontFamily\r\nmain_criteria_name=[\"D1-Project Charechteristic\",\"D2-Supply Chain\",\"D3-Time\",\"D4-Cost\",\"D5-Quality\",\"D6-Procurement\",\"D7-Socio Cultural\"]\r\nsubCriteria=[\"F1: Location\",\"F2: Project Design\",\"F3: Financing\",\"F4: Available manufacturer\",\"F5: Available Infrastructure\",\"F6: Experts and skilled workers\",\"F7: Design period\",\"F8: Production time\",\"F9: Mobilization and transfer time\",\"F10: Assembly and construction period\",\"F11: Design\",\"F12: Production and manufacturing\",\"F13: Logistics\",\"F14: Assembly and construction\",\"F15: Maintenance\",\"F16: DfMA + disassembly\",\"F17: Standards and protocols\",\"F18: Sustainability (carbon emission, energy consumption, waste)\",\"F19: Type of procurement and delivery method\",\"F20: Cultural resistance\",\"F21: Local authority regulation (workers’ union syndicate)\"]\r\ndef create_form_with_table(subFactors,index):\r\n    class DynamicForm(Form):\r\n        def __init__(self):\r\n            # Initialize the form\r\n            column_names=[\"ALT1\",\"ALT2\"]\r\n            self.Text = \"FAHP User Input Interface\"\r\n            self.ClientSize = Size(400, len(subFactors)*120+170)\r\n            startX=20\r\n            startY=5\r\n            inputData=[]\r\n            # Create a label for the whole menu\r\n            self.dropdown_label = Label()\r\n            self.dropdown_label.Text = \"Sub Criteria for  \"+main_criteria_name[index]\r\n            self.dropdown_label.Location = Point(startX, startY)\r\n            self.dropdown_label.AutoSize = True\r\n            \r\n            font = Font(FontFamily.GenericSansSerif,\r\n            8, 2) \r\n            self.dropdown_label.Font=font\r\n            self.Controls.Add(self.dropdown_label)\r\n            for i in range(len(subFactors)):\r\n                # Create a label for the whole menu\r\n                self.dropdown_label = Label()\r\n                self.dropdown_label.Text = subCriteria[subFactors[i]-1]\r\n                self.dropdown_label.Location = Point(startX, startY+30)\r\n                font = Font(FontFamily.GenericSansSerif,\r\n            8, 1) \r\n            \r\n                self.dropdown_label.Font=font\r\n                self.dropdown_label.AutoSize = True\r\n                self.Controls.Add(self.dropdown_label)\r\n\r\n                # Create a DataGridView for table input\r\n                self.dataGridView = DataGridView()\r\n                self.dataGridView.Location = Point(startX, startY+55)\r\n                self.dataGridView.Size = Size(350,70)\r\n                self.dataGridView.AutoGenerateColumns = False\r\n \r\n                # Define columns based on column_names\r\n                for i, row in enumerate(self.dataGridView.Rows):\r\n                    row.HeaderCell.Value = column_names[i]\r\n                column = DataGridViewTextBoxColumn()\r\n                column.HeaderText = \" \"\r\n                self.dataGridView.Columns.Add(column)    \r\n                for col_name in column_names:\r\n                    column = DataGridViewTextBoxColumn()\r\n                    column.HeaderText = col_name\r\n                    self.dataGridView.Columns.Add(column)\r\n\r\n                self.dataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill\r\n                self.Controls.Add(self.dataGridView)\r\n                    # Set default values for some cells\r\n                global row_values\r\n                for i in range(len(column_names)):\r\n                   row_values=[\"\" for _ in range(len(column_names))]\r\n                   row_values[i]=\"1 1 1\"\r\n                   row_values[0:i]=[\"NA\"]*i\r\n                   row_values.insert(0, column_names[i])\r\n                   self.dataGridView.Rows.Add(row_values)\r\n\r\n                # Set row headers visible and read-only\r\n                self.dataGridView.RowHeadersVisible = True\r\n                startY=startY+120\r\n            \r\n                #for row in self.dataGridView.Rows:\r\n                #   row.HeaderCell.ReadOnly = True\r\n            # Create a button to submit the input\r\n            self.submit_button = Button()\r\n            self.submit_button.Text = \"Submit\"\r\n            self.submit_button.Location = Point(300, len(subFactors)*115+50)\r\n            self.submit_button.Click += self.submit_button_click\r\n            self.Controls.Add(self.submit_button)\r\n            \r\n            # Create Help buttons\r\n            self.help_button1 = Button()\r\n            self.help_button1.Text = \"Factors ' Definition\"\r\n            self.help_button1.Location = Point(25, len(subFactors)*115+50)\r\n            self.help_button1.Size=Size(135,20)\r\n            self.help_button1.Click += self.help_button1_click\r\n            self.Controls.Add(self.help_button1)\r\n\r\n            self.help_button2 = Button()\r\n            self.help_button2.Text = \"Scoring Assistance\"\r\n            self.help_button2.Location = Point(25, len(subFactors)*115+70)\r\n            self.help_button2.Size=Size(135,20)\r\n            self.help_button2.Click += self.help_button2_click\r\n            self.Controls.Add(self.help_button2)\r\n\r\n            #Create Logo box\r\n            path=r\"D:\\Nariman Saze\\narbiman2.png\"\r\n            photo_path = path  \r\n            photo_image = Image.FromFile(photo_path)\r\n\r\n            # Create a picture box to display the photo\r\n            self.logo_box = PictureBox()\r\n            self.logo_box.Location = Point(275,len(subFactors)*115+80)\r\n            self.logo_box.Size=Size(100,100)\r\n            self.logo_box.Image = photo_image\r\n            self.logo_box.SizeMode = PictureBoxSizeMode.Zoom\r\n        \r\n            self.Controls.Add(self.logo_box)\r\n \r\n        def submit_button_click(self, sender, args):\r\n            # Event handler for submit button click\r\n            global data\r\n            data = []\r\n            # Iterate through rows in DataGridView and retrieve cell values\r\n            for control in self.Controls:\r\n                if isinstance(control, DataGridView):\r\n                    gridData=[[\"\",\"ALT1\",\"ALT2\"]]\r\n                    for row in control.Rows:\r\n                        values = []\r\n                        for cell in row.Cells:\r\n                           values.append(cell.Value)\r\n                        gridData.append(values)\r\n                    data.append(gridData[:-1])\r\n            self.Close()\r\n        def help_button1_click(self, sender, args):\r\n            # Event handler for help button 1 click\r\n            #self.picture_box.Image = Image.FromFile(r\"C:\\Users\\narim\\Desktop\\profile photo.jpg\")\r\n            a=1\r\n\r\n        def help_button2_click(self, sender, args):\r\n            # Event handler for help button 2 click\r\n            #self.picture_box.Image = Image.FromFile(\"photo2.jpg\")\r\n            a=1\r\n\r\n            # Convert the data to a pandas DataFrame\r\n            \r\n\r\n\r\n    # Create an instance of the dynamic form\r\n    form = DynamicForm()\r\n    form.ShowDialog()\r\n\r\n# Example usage:\r\nsubFactors=[[1,2],[3,4,5,6],[7,8,9,10],[11,12,13,14,15],[16,17,18],[19],[20,21]]\r\ninputList=[]\r\nfor i in range(len(subFactors)):\r\n    create_form_with_table(subFactors[i],i)\r\n    inputList.append(data)\r\n\r\n\r\n# Assign your output to the OUT variable.\r\nOUT = inputList",
+      "Engine": "CPython3",
+      "EngineName": "CPython3",
+      "VariableInputPorts": true,
+      "Id": "7d7c6b04f27941f4978926b1c7071b90",
+      "NodeType": "PythonScriptNode",
+      "Inputs": [
+        {
+          "Id": "608d57eaff854e51ae2e4846a6a3255d",
+          "Name": "IN[0]",
+          "Description": "Input #0",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "6c71cb1040c2458285a3392cac2422dc",
+          "Name": "OUT",
+          "Description": "Result of the python script",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Runs an embedded Python script."
+    },
+    {
+      "ConcreteType": "GenerativeDesign.Remember, GenerativeDesign.Dynamo.Nodes",
+      "Cache": "[\r\n  [\r\n    \"D1-Project Charechteristic\",\r\n    \"D2-Supply Chain\",\r\n    \"D3-Time\",\r\n    \"D4-Cost\",\r\n    \"D5-Quality\",\r\n    \"D6-Procurement\",\r\n    \"D7-Socio Cultural\"\r\n  ],\r\n  [\r\n    \"D1-Project Charechteristic\",\r\n    \"1 1 1\",\r\n    \"\",\r\n    \"\",\r\n    \"\",\r\n    \"\",\r\n    \"\",\r\n    \"\"\r\n  ],\r\n  [\r\n    \"D2-Supply Chain\",\r\n    \"NA\",\r\n    \"1 1 1\",\r\n    \"\",\r\n    \"\",\r\n    \"\",\r\n    \"\",\r\n    \"\"\r\n  ],\r\n  [\r\n    \"D3-Time\",\r\n    \"NA\",\r\n    \"NA\",\r\n    \"1 1 1\",\r\n    \"\",\r\n    \"\",\r\n    \"\",\r\n    \"\"\r\n  ],\r\n  [\r\n    \"D4-Cost\",\r\n    \"NA\",\r\n    \"NA\",\r\n    \"NA\",\r\n    \"1 1 1\",\r\n    \"\",\r\n    \"\",\r\n    \"\"\r\n  ],\r\n  [\r\n    \"D5-Quality\",\r\n    \"NA\",\r\n    \"NA\",\r\n    \"NA\",\r\n    \"NA\",\r\n    \"1 1 1\",\r\n    \"\",\r\n    \"\"\r\n  ],\r\n  [\r\n    \"D6-Procurement\",\r\n    \"NA\",\r\n    \"NA\",\r\n    \"NA\",\r\n    \"NA\",\r\n    \"NA\",\r\n    \"1 1 1\",\r\n    \"\"\r\n  ],\r\n  [\r\n    \"D7-Socio Cultural\",\r\n    \"NA\",\r\n    \"NA\",\r\n    \"NA\",\r\n    \"NA\",\r\n    \"NA\",\r\n    \"NA\",\r\n    \"1 1 1\"\r\n  ]\r\n]",
+      "Id": "104a3b27dd1b4455804971bf51ac399c",
+      "NodeType": "ExtensionNode",
+      "Inputs": [
+        {
+          "Id": "6a1d91ae8a8447fb8c40a4d290f52e8d",
+          "Name": ">",
+          "Description": "Data to sample and store in the file.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "60dcfcd00fc24fe18b507d4712377407",
+          "Name": ">",
+          "Description": "Data",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Store data passing through this node to the Dynamo file. Return the stored data if the input is null."
+    },
+    {
+      "ConcreteType": "GenerativeDesign.Remember, GenerativeDesign.Dynamo.Nodes",
+      "Cache": "[\r\n  [\r\n    [\r\n      \"\",\r\n      \"F1\",\r\n      \"F2\"\r\n    ],\r\n    [\r\n      \"F1\",\r\n      \"1 1 1\",\r\n      \"\"\r\n    ],\r\n    [\r\n      \"F2\",\r\n      \"NA\",\r\n      \"1 1 1\"\r\n    ]\r\n  ],\r\n  [\r\n    [\r\n      \"\",\r\n      \"F3\",\r\n      \"F4\",\r\n      \"F5\",\r\n      \"F6\"\r\n    ],\r\n    [\r\n      \"F3\",\r\n      \"1 1 1\",\r\n      \"\",\r\n      \"\",\r\n      \"\"\r\n    ],\r\n    [\r\n      \"F4\",\r\n      \"NA\",\r\n      \"1 1 1\",\r\n      \"\",\r\n      \"\"\r\n    ],\r\n    [\r\n      \"F5\",\r\n      \"NA\",\r\n      \"NA\",\r\n      \"1 1 1\",\r\n      \"\"\r\n    ],\r\n    [\r\n      \"F6\",\r\n      \"NA\",\r\n      \"NA\",\r\n      \"NA\",\r\n      \"1 1 1\"\r\n    ]\r\n  ],\r\n  [\r\n    [\r\n      \"\",\r\n      \"F7\",\r\n      \"F8\",\r\n      \"F9\",\r\n      \"F10\"\r\n    ],\r\n    [\r\n      \"F7\",\r\n      \"1 1 1\",\r\n      \"\",\r\n      \"\",\r\n      \"\"\r\n    ],\r\n    [\r\n      \"F8\",\r\n      \"NA\",\r\n      \"1 1 1\",\r\n      \"\",\r\n      \"\"\r\n    ],\r\n    [\r\n      \"F9\",\r\n      \"NA\",\r\n      \"NA\",\r\n      \"1 1 1\",\r\n      \"\"\r\n    ],\r\n    [\r\n      \"F10\",\r\n      \"NA\",\r\n      \"NA\",\r\n      \"NA\",\r\n      \"1 1 1\"\r\n    ]\r\n  ],\r\n  [\r\n    [\r\n      \"\",\r\n      \"F11\",\r\n      \"F12\",\r\n      \"F13\",\r\n      \"F14\",\r\n      \"F15\"\r\n    ],\r\n    [\r\n      \"F11\",\r\n      \"1 1 1\",\r\n      \"\",\r\n      \"\",\r\n      \"\",\r\n      \"\"\r\n    ],\r\n    [\r\n      \"F12\",\r\n      \"NA\",\r\n      \"1 1 1\",\r\n      \"\",\r\n      \"\",\r\n      \"\"\r\n    ],\r\n    [\r\n      \"F13\",\r\n      \"NA\",\r\n      \"NA\",\r\n      \"1 1 1\",\r\n      \"\",\r\n      \"\"\r\n    ],\r\n    [\r\n      \"F14\",\r\n      \"NA\",\r\n      \"NA\",\r\n      \"NA\",\r\n      \"1 1 1\",\r\n      \"\"\r\n    ],\r\n    [\r\n      \"F15\",\r\n      \"NA\",\r\n      \"NA\",\r\n      \"NA\",\r\n      \"NA\",\r\n      \"1 1 1\"\r\n    ]\r\n  ],\r\n  [\r\n    [\r\n      \"\",\r\n      \"F16\",\r\n      \"F17\",\r\n      \"F18\"\r\n    ],\r\n    [\r\n      \"F16\",\r\n      \"1 1 1\",\r\n      \"\",\r\n      \"\"\r\n    ],\r\n    [\r\n      \"F17\",\r\n      \"NA\",\r\n      \"1 1 1\",\r\n      \"\"\r\n    ],\r\n    [\r\n      \"F18\",\r\n      \"NA\",\r\n      \"NA\",\r\n      \"1 1 1\"\r\n    ]\r\n  ],\r\n  [\r\n    [\r\n      \"\",\r\n      \"F19\"\r\n    ],\r\n    [\r\n      \"F19\",\r\n      \"1 1 1\"\r\n    ]\r\n  ],\r\n  [\r\n    [\r\n      \"\",\r\n      \"F20\",\r\n      \"F21\"\r\n    ],\r\n    [\r\n      \"F20\",\r\n      \"1 1 1\",\r\n      \"\"\r\n    ],\r\n    [\r\n      \"F21\",\r\n      \"NA\",\r\n      \"1 1 1\"\r\n    ]\r\n  ]\r\n]",
+      "Id": "5b2243acdb264b47a28dd8a4048c40de",
+      "NodeType": "ExtensionNode",
+      "Inputs": [
+        {
+          "Id": "e37a96ef199340a6954c512d938ec21b",
+          "Name": ">",
+          "Description": "Data to sample and store in the file.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "207982b8910848c69d962d399e1d4806",
+          "Name": ">",
+          "Description": "Data",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Store data passing through this node to the Dynamo file. Return the stored data if the input is null."
+    },
+    {
+      "ConcreteType": "GenerativeDesign.Remember, GenerativeDesign.Dynamo.Nodes",
+      "Cache": "[\r\n  [\r\n    [\r\n      [\r\n        \"\",\r\n        \"ALT1\",\r\n        \"ALT2\"\r\n      ],\r\n      [\r\n        \"ALT1\",\r\n        \"1 1 1\",\r\n        \"\"\r\n      ],\r\n      [\r\n        \"ALT2\",\r\n        \"NA\",\r\n        \"1 1 1\"\r\n      ]\r\n    ],\r\n    [\r\n      [\r\n        \"\",\r\n        \"ALT1\",\r\n        \"ALT2\"\r\n      ],\r\n      [\r\n        \"ALT1\",\r\n        \"1 1 1\",\r\n        \"\"\r\n      ],\r\n      [\r\n        \"ALT2\",\r\n        \"NA\",\r\n        \"1 1 1\"\r\n      ]\r\n    ]\r\n  ],\r\n  [\r\n    [\r\n      [\r\n        \"\",\r\n        \"ALT1\",\r\n        \"ALT2\"\r\n      ],\r\n      [\r\n        \"ALT1\",\r\n        \"1 1 1\",\r\n        \"\"\r\n      ],\r\n      [\r\n        \"ALT2\",\r\n        \"NA\",\r\n        \"1 1 1\"\r\n      ]\r\n    ],\r\n    [\r\n      [\r\n        \"\",\r\n        \"ALT1\",\r\n        \"ALT2\"\r\n      ],\r\n      [\r\n        \"ALT1\",\r\n        \"1 1 1\",\r\n        \"\"\r\n      ],\r\n      [\r\n        \"ALT2\",\r\n        \"NA\",\r\n        \"1 1 1\"\r\n      ]\r\n    ],\r\n    [\r\n      [\r\n        \"\",\r\n        \"ALT1\",\r\n        \"ALT2\"\r\n      ],\r\n      [\r\n        \"ALT1\",\r\n        \"1 1 1\",\r\n        \"\"\r\n      ],\r\n      [\r\n        \"ALT2\",\r\n        \"NA\",\r\n        \"1 1 1\"\r\n      ]\r\n    ],\r\n    [\r\n      [\r\n        \"\",\r\n        \"ALT1\",\r\n        \"ALT2\"\r\n      ],\r\n      [\r\n        \"ALT1\",\r\n        \"1 1 1\",\r\n        \"\"\r\n      ],\r\n      [\r\n        \"ALT2\",\r\n        \"NA\",\r\n        \"1 1 1\"\r\n      ]\r\n    ]\r\n  ],\r\n  [\r\n    [\r\n      [\r\n        \"\",\r\n        \"ALT1\",\r\n        \"ALT2\"\r\n      ],\r\n      [\r\n        \"ALT1\",\r\n        \"1 1 1\",\r\n        \"\"\r\n      ],\r\n      [\r\n        \"ALT2\",\r\n        \"NA\",\r\n        \"1 1 1\"\r\n      ]\r\n    ],\r\n    [\r\n      [\r\n        \"\",\r\n        \"ALT1\",\r\n        \"ALT2\"\r\n      ],\r\n      [\r\n        \"ALT1\",\r\n        \"1 1 1\",\r\n        \"\"\r\n      ],\r\n      [\r\n        \"ALT2\",\r\n        \"NA\",\r\n        \"1 1 1\"\r\n      ]\r\n    ],\r\n    [\r\n      [\r\n        \"\",\r\n        \"ALT1\",\r\n        \"ALT2\"\r\n      ],\r\n      [\r\n        \"ALT1\",\r\n        \"1 1 1\",\r\n        \"\"\r\n      ],\r\n      [\r\n        \"ALT2\",\r\n        \"NA\",\r\n        \"1 1 1\"\r\n      ]\r\n    ],\r\n    [\r\n      [\r\n        \"\",\r\n        \"ALT1\",\r\n        \"ALT2\"\r\n      ],\r\n      [\r\n        \"ALT1\",\r\n        \"1 1 1\",\r\n        \"\"\r\n      ],\r\n      [\r\n        \"ALT2\",\r\n        \"NA\",\r\n        \"1 1 1\"\r\n      ]\r\n    ]\r\n  ],\r\n  [\r\n    [\r\n      [\r\n        \"\",\r\n        \"ALT1\",\r\n        \"ALT2\"\r\n      ],\r\n      [\r\n        \"ALT1\",\r\n        \"1 1 1\",\r\n        \"\"\r\n      ],\r\n      [\r\n        \"ALT2\",\r\n        \"NA\",\r\n        \"1 1 1\"\r\n      ]\r\n    ],\r\n    [\r\n      [\r\n        \"\",\r\n        \"ALT1\",\r\n        \"ALT2\"\r\n      ],\r\n      [\r\n        \"ALT1\",\r\n        \"1 1 1\",\r\n        \"\"\r\n      ],\r\n      [\r\n        \"ALT2\",\r\n        \"NA\",\r\n        \"1 1 1\"\r\n      ]\r\n    ],\r\n    [\r\n      [\r\n        \"\",\r\n        \"ALT1\",\r\n        \"ALT2\"\r\n      ],\r\n      [\r\n        \"ALT1\",\r\n        \"1 1 1\",\r\n        \"\"\r\n      ],\r\n      [\r\n        \"ALT2\",\r\n        \"NA\",\r\n        \"1 1 1\"\r\n      ]\r\n    ],\r\n    [\r\n      [\r\n        \"\",\r\n        \"ALT1\",\r\n        \"ALT2\"\r\n      ],\r\n      [\r\n        \"ALT1\",\r\n        \"1 1 1\",\r\n        \"\"\r\n      ],\r\n      [\r\n        \"ALT2\",\r\n        \"NA\",\r\n        \"1 1 1\"\r\n      ]\r\n    ],\r\n    [\r\n      [\r\n        \"\",\r\n        \"ALT1\",\r\n        \"ALT2\"\r\n      ],\r\n      [\r\n        \"ALT1\",\r\n        \"1 1 1\",\r\n        \"\"\r\n      ],\r\n      [\r\n        \"ALT2\",\r\n        \"NA\",\r\n        \"1 1 1\"\r\n      ]\r\n    ]\r\n  ],\r\n  [\r\n    [\r\n      [\r\n        \"\",\r\n        \"ALT1\",\r\n        \"ALT2\"\r\n      ],\r\n      [\r\n        \"ALT1\",\r\n        \"1 1 1\",\r\n        \"\"\r\n      ],\r\n      [\r\n        \"ALT2\",\r\n        \"NA\",\r\n        \"1 1 1\"\r\n      ]\r\n    ],\r\n    [\r\n      [\r\n        \"\",\r\n        \"ALT1\",\r\n        \"ALT2\"\r\n      ],\r\n      [\r\n        \"ALT1\",\r\n        \"1 1 1\",\r\n        \"\"\r\n      ],\r\n      [\r\n        \"ALT2\",\r\n        \"NA\",\r\n        \"1 1 1\"\r\n      ]\r\n    ],\r\n    [\r\n      [\r\n        \"\",\r\n        \"ALT1\",\r\n        \"ALT2\"\r\n      ],\r\n      [\r\n        \"ALT1\",\r\n        \"1 1 1\",\r\n        \"\"\r\n      ],\r\n      [\r\n        \"ALT2\",\r\n        \"NA\",\r\n        \"1 1 1\"\r\n      ]\r\n    ]\r\n  ],\r\n  [\r\n    [\r\n      [\r\n        \"\",\r\n        \"ALT1\",\r\n        \"ALT2\"\r\n      ],\r\n      [\r\n        \"ALT1\",\r\n        \"1 1 1\",\r\n        \"\"\r\n      ],\r\n      [\r\n        \"ALT2\",\r\n        \"NA\",\r\n        \"1 1 1\"\r\n      ]\r\n    ]\r\n  ],\r\n  [\r\n    [\r\n      [\r\n        \"\",\r\n        \"ALT1\",\r\n        \"ALT2\"\r\n      ],\r\n      [\r\n        \"ALT1\",\r\n        \"1 1 1\",\r\n        \"\"\r\n      ],\r\n      [\r\n        \"ALT2\",\r\n        \"NA\",\r\n        \"1 1 1\"\r\n      ]\r\n    ],\r\n    [\r\n      [\r\n        \"\",\r\n        \"ALT1\",\r\n        \"ALT2\"\r\n      ],\r\n      [\r\n        \"ALT1\",\r\n        \"1 1 1\",\r\n        \"\"\r\n      ],\r\n      [\r\n        \"ALT2\",\r\n        \"NA\",\r\n        \"1 1 1\"\r\n      ]\r\n    ]\r\n  ]\r\n]",
+      "Id": "1200fa0385974bcc954083f1bd8aa6c5",
+      "NodeType": "ExtensionNode",
+      "Inputs": [
+        {
+          "Id": "9660f23b23304b2dbc3d0fb29b9a1a9a",
+          "Name": ">",
+          "Description": "Data to sample and store in the file.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "4d83de8d771b4646b8a62f7c940b74b0",
+          "Name": ">",
+          "Description": "Data",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Store data passing through this node to the Dynamo file. Return the stored data if the input is null."
+    },
+    {
+      "ConcreteType": "PythonNodeModels.PythonNode, PythonNodeModels",
+      "Code": "# Load the Python Standard and DesignScript Libraries\r\nimport sys\r\nimport clr\r\nclr.AddReference('ProtoGeometry')\r\nfrom Autodesk.DesignScript.Geometry import *\r\n\r\n# The inputs to this node will be stored as a list in the IN variables.\r\ndataEnteringNode = IN\r\n\r\n\r\n# Place your code below this line\r\nimport numpy as np\r\nimport pandas as pd\r\nfrom scipy.stats import gmean\r\n\r\n\r\nalter_names=IN[3]\r\ndef fuzzy(parameter,data):\r\n   \r\n   l=len(data)\r\n   geoMean=pd.DataFrame()\r\n   criteria=[]\r\n   for name in data.columns:\r\n       if name[0] not in  criteria:\r\n           criteria.append(name[0])\r\n   for i in list(range(1,l+1)):\r\n      temp=0\r\n      for j in [1,2,3]:\r\n           temp=gmean([data.loc[i-1,(criteria[k],str(j))] for k in range(len(criteria))])\r\n           geoMean.loc[i-1,str(j)]=temp\r\n   a=geoMean.sum(axis=0).transpose()\r\n   geoMean=pd.concat([geoMean,pd.DataFrame(a).transpose()],ignore_index=True)\r\n   geoMean=pd.concat([geoMean,pd.DataFrame(1/geoMean.iloc[-1,:]).transpose()],ignore_index=True)\r\n   geoStat=[min(geoMean.iloc[-1]),geoMean.iloc[-1].mean(),geoMean.iloc[-1].max()]\r\n   fuzzyW=pd.DataFrame()\r\n   for j in range(l):\r\n      temp=[geoMean.iloc[j,i]*geoStat[i] for i in range(3)]\r\n      fuzzyW=pd.concat([fuzzyW,pd.DataFrame(temp).transpose()],ignore_index=True)\r\n   fuzzyW[\"MI\"]=fuzzyW.mean(axis=1)\r\n   fuzzyW[\"Nor\"]=fuzzyW[\"MI\"]/fuzzyW[\"MI\"].sum(axis=0)\r\n   return(fuzzyW)\r\n   \r\ndef matrix_prep(inp):\r\n   D_csv=pd.DataFrame(inp)\r\n   columns_D=D_csv.iloc[0][1:]\r\n   \r\n   columns=[]\r\n   for main_column in columns_D:\r\n       for i in [1,2,3]:        \r\n          columns.append((main_column,str(i)))\r\n   D_data=D_csv.iloc[1:]\r\n   D_data=D_data.drop(D_data.columns[0],axis=1)\r\n   k_1=[]\r\n   k_2=[]\r\n   for i in range(len(D_data)):\r\n       new_n=[]\r\n       new_n2=[]\r\n       for n_list in D_data.iloc[i]:\r\n\r\n           if n_list[0]==\" \":\r\n               n_list=n_list[1:]\r\n           new_n.append([float(x) for x in str(n_list).split(\" \") if x!=\"NA\"])\r\n           new_n2.append(sorted([1/float(x) for x in str(n_list).split(\" \") if x!=\"NA\"]))\r\n       k_1.append(new_n)\r\n       k_2.append(new_n2)\r\n   for i in range(len(k_1)):\r\n       for j in range(len(k_1[i])):\r\n           if j<i:\r\n               k_1[i][j]=k_2[j][i]\r\n   k_f=[]\r\n   for row in k_1:\r\n       k_f.append([item for sublist in row for item in sublist])\r\n   k_f=pd.DataFrame(k_f)\r\n   k_f.columns=pd.MultiIndex.from_tuples(columns)\r\n   return(k_f)\r\n\r\nd_matrixes=[]\r\nfuzzyW_Ds=[]\r\nf_matrixes=[]\r\nfs_fuzzy=[]\r\nfor i in range(7):\r\n    d_matrixes.append(matrix_prep(IN[1][i]))\r\n    fuzzyW_Ds.append(fuzzy(\"f\",d_matrixes[i]))\r\n    \r\nsubs=[[1,2],[3,4,5,6],[7,8,9,10],[11,12,13,14,15],[16,17,18],[19],[20,21]]\r\nk=0\r\nfor i in range(len(subs)):\r\n    temp_f_matrixes=[]\r\n    temp_fs_fuzzy=[]\r\n    for j in range(len(subs[i])): \r\n        temp_f_matrixes.append(matrix_prep(IN[2][i][j]))\r\n        temp_fs_fuzzy.append(fuzzy(\"ALT\",temp_f_matrixes[j]))\r\n        \r\n        k=k+1\r\n    f_matrixes.append(temp_f_matrixes)\r\n    fs_fuzzy.append(temp_fs_fuzzy)\r\n    \r\nd_matrix=matrix_prep(IN[0])   \r\nfuzzyW_D=fuzzy(\"D\",d_matrix)\r\n\r\nfinal=pd.DataFrame()\r\nfor i in range(len(fs_fuzzy)):\r\n    for j in range(len(fs_fuzzy[i])):\r\n       temp=pd.DataFrame([fuzzyW_D[\"Nor\"][i]*fuzzyW_Ds[i][\"Nor\"][j],fuzzyW_D[\"Nor\"][i]*fuzzyW_Ds[i][\"Nor\"][j]*fs_fuzzy[i][j][\"Nor\"][0],fuzzyW_D[\"Nor\"][i]*fuzzyW_Ds[i][\"Nor\"][j]*fs_fuzzy[i][j][\"Nor\"][1]]).transpose()\r\n       final=pd.concat([final,temp],ignore_index=True)\r\n\r\nrank=\"1st Alternative (\"+alter_names[0]+\") Score is \" +str(round(final.iloc[:,1].sum(),3))+\"\\n2nd Alternative (\"+alter_names[1]+\") Score is \" +str(round(final.iloc[:,2].sum(),3))\r\n    \r\n#Assign your output to the OUT variable.\r\nOUT = rank",
+      "Engine": "CPython3",
+      "EngineName": "CPython3",
+      "VariableInputPorts": true,
+      "Id": "06659335d845424aa30405da088bb2bc",
+      "NodeType": "PythonScriptNode",
+      "Inputs": [
+        {
+          "Id": "b0dae44f019341f58690bf7200680dcf",
+          "Name": "IN[0]",
+          "Description": "Input #0",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "87241cf66d2e497a853ffd0943c09859",
+          "Name": "IN[1]",
+          "Description": "Input #1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "a7c24b75925b4390a0f59848b34a6175",
+          "Name": "IN[2]",
+          "Description": "Input #2",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "c0a5b377029746bb87e19d8636f0c02a",
+          "Name": "IN[3]",
+          "Description": "Input #3",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "0350c901da534c5899d4a02b82728c61",
+          "Name": "OUT",
+          "Description": "Result of the python script",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Runs an embedded Python script."
+    },
+    {
+      "ConcreteType": "PythonNodeModels.PythonNode, PythonNodeModels",
+      "Code": "# Load the Python Standard and DesignScript Libraries\r\nimport sys\r\nimport clr\r\nclr.AddReference('ProtoGeometry')\r\nfrom Autodesk.DesignScript.Geometry import *\r\n\r\n# The inputs to this node will be stored as a list in the IN variables.\r\ndataEnteringNode = IN\r\n\r\n# Place your code below this line\r\nimport clr\r\nclr.AddReference('System.Windows.Forms')\r\nfrom System.Windows.Forms import MessageBox,MessageBoxButtons, MessageBoxIcon\r\n\r\n# Define the custom content as a string\r\nrank = IN[0]\r\n#rank=\"1st Alternative Score is \" +str(round(final.iloc[:,1].sum(),3))+\"\\n2nd Alternative Score is \" +str(round(final.iloc[:,2].sum(),3))\r\n# Define the font for the message box\r\n\r\n\r\n# Show the MessageBox with custom settings\r\nresult = MessageBox.Show(None, rank, \"FAHP Ranking Results\", MessageBoxButtons.OK, MessageBoxIcon.Information)\r\n# Assign your output to the OUT variable.\r\nOUT = 0",
+      "Engine": "CPython3",
+      "EngineName": "CPython3",
+      "VariableInputPorts": true,
+      "Id": "c669e0c6e618453899357ffdec2e9e2c",
+      "NodeType": "PythonScriptNode",
+      "Inputs": [
+        {
+          "Id": "4f9c052381904b32ba266c94eeb326c7",
+          "Name": "IN[0]",
+          "Description": "Input #0",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "bf6c52d177fa468c84cc442e222e7abe",
+          "Name": "OUT",
+          "Description": "Result of the python script",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Runs an embedded Python script."
+    },
+    {
+      "ConcreteType": "PythonNodeModels.PythonNode, PythonNodeModels",
+      "Code": "# Load the Python Standard and DesignScript Libraries\r\nimport clr\r\nclr.AddReference('System.Windows.Forms')\r\nclr.AddReference('System.Drawing')\r\nclr.AddReference('ProtoGeometry')\r\nfrom Autodesk.DesignScript.Geometry import *\r\n\r\n# The inputs to this node will be stored as a list in the IN variables.\r\ndataEnteringNode = IN\r\nfrom System.Windows.Forms import Form, Label, Button, TextBox, TreeView, TreeNode\r\nfrom System.Drawing import Point, Size\r\n\r\n# Define a global variable to store the selected items\r\nselected_items = []\r\n\r\nclass MyForm(Form):\r\n    def __init__(self):\r\n        # Initialize the form\r\n        self.Text = \"User Input Form\"\r\n        self.ClientSize = Size(350, 400)\r\n\r\n        # Create a label for the text input\r\n        self.text_label = Label()\r\n        self.text_label.Text = IN[0]\r\n        self.text_label.Location = Point(20, 20)\r\n        self.text_label.AutoSize = True\r\n        self.Controls.Add(self.text_label)\r\n\r\n\r\n        # Create a button to submit the input\r\n        self.submit_button = Button()\r\n        self.submit_button.Text = \"Calculate\"\r\n        self.submit_button.Location = Point(20, 320)\r\n        self.submit_button.Click += self.submit_button_click\r\n        self.Controls.Add(self.submit_button)\r\n\r\n    def submit_button_click(self, sender, args):\r\n        # Event handler for submit button click\r\n\r\n        self.Close()\r\n\r\n        \r\n\r\n# Create an instance of the form\r\nform = MyForm()\r\nform.ShowDialog()\r\n\r\n\r\n#return (Autodesk.Revit.UI.Result.Succeeded)\r\n# Assign your output to the OUT variable.\r\nOUT =0",
+      "Engine": "CPython3",
+      "EngineName": "CPython3",
+      "VariableInputPorts": true,
+      "Id": "491c54a8e5044378a98147da492e0b07",
+      "NodeType": "PythonScriptNode",
+      "Inputs": [
+        {
+          "Id": "b2f6cd396ee842ad8149f543b5dde0c7",
+          "Name": "IN[0]",
+          "Description": "Input #0",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "9b2f371c5c18447bb60271ee220577b1",
+          "Name": "OUT",
+          "Description": "Result of the python script",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Runs an embedded Python script."
+    },
+    {
+      "ConcreteType": "PythonNodeModels.PythonNode, PythonNodeModels",
+      "Code": "# Load the Python Standard and DesignScript Libraries\r\nimport sys\r\nimport clr\r\nclr.AddReference('ProtoGeometry')\r\nfrom Autodesk.DesignScript.Geometry import *\r\n\r\n# The inputs to this node will be stored as a list in the IN variables.\r\ndataEnteringNode = IN\r\n\r\n# Place your code below this line\r\nimport clr\r\nclr.AddReference('System.Windows.Forms')\r\nclr.AddReference('System.Drawing')\r\n\r\nfrom System.Windows.Forms import Form, Label, Button, ComboBox\r\nfrom System.Drawing import Point, Size\r\n\r\nclass MyForm(Form):\r\n    def __init__(self):\r\n        # Initialize the form\r\n        self.Text = \"User Input Form\"\r\n        self.ClientSize = Size(350, 400)\r\n        self.dropdowns = []  # List to hold dropdown controls\r\n\r\n        # Create and populate dropdowns dynamically\r\n        for i in range(3):  # Create 3 dropdowns\r\n            label = Label()\r\n            label.Text = f\"Dropdown {i + 1}:\"\r\n            label.Location = Point(20, 20 + 70 * i)\r\n            label.AutoSize = True\r\n            self.Controls.Add(label)\r\n\r\n            dropdown = ComboBox()\r\n            dropdown.Location = Point(20, 40 + 70 * i)\r\n            dropdown.Size = Size(200, 20)\r\n            dropdown.Items.AddRange([\"Option 1\", \"Option 2\", \"Option 3\"])  # Predefined options\r\n            self.Controls.Add(dropdown)\r\n            self.dropdowns.append(dropdown)  # Add the dropdown to the list\r\n\r\n        # Create a button to submit the input\r\n        self.submit_button = Button()\r\n        self.submit_button.Text = \"Submit\"\r\n        self.submit_button.Location = Point(20, 320)\r\n        self.submit_button.Click += self.submit_button_click\r\n        self.Controls.Add(self.submit_button)\r\n\r\n    def submit_button_click(self, sender, args):\r\n        # Event handler for submit button click\r\n        global selected_values\r\n        selected_values = []\r\n        # Iterate through the list of dropdowns and retrieve selected values\r\n        for dropdown in self.dropdowns:\r\n            selected_values.append(dropdown.SelectedItem)\r\n        print(\"Selected values:\", selected_values)\r\n\r\n# Create an instance of the form\r\nform = MyForm()\r\nform.ShowDialog()\r\n\r\n# Assign your output to the OUT variable.\r\nOUT = selected_values",
+      "Engine": "CPython3",
+      "EngineName": "CPython3",
+      "VariableInputPorts": true,
+      "Id": "76b7356961fe4aad96f59b052f551774",
+      "NodeType": "PythonScriptNode",
+      "Inputs": [
+        {
+          "Id": "2abbecfb41ad4af1ad1a1bd359d91351",
+          "Name": "IN[0]",
+          "Description": "Input #0",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "dbae6afd5b214867b718d515b3b23012",
+          "Name": "IN[1]",
+          "Description": "Input #1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "ea8e9159d9514869941c71cd5988b89d",
+          "Name": "OUT",
+          "Description": "Result of the python script",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Runs an embedded Python script."
+    },
+    {
+      "ConcreteType": "PythonNodeModels.PythonNode, PythonNodeModels",
+      "Code": "# Load the Python Standard and DesignScript Libraries\r\nimport sys\r\nimport clr\r\nclr.AddReference('ProtoGeometry')\r\nclr.AddReference('System.Windows.Forms')\r\nclr.AddReference('System.Drawing')\r\nfrom Autodesk.DesignScript.Geometry import *\r\nfrom System.Windows.Forms import Form, Label, Button, TextBox, ComboBox, TreeNode, TreeView,PictureBox,PictureBoxSizeMode\r\nfrom System.Drawing import Point, Size,Image\r\n# The inputs to this node will be stored as a list in the IN variables.\r\ndataEnteringNode = IN\r\n\r\n# Place your code below this line\r\nfamilyList=IN[0]\r\nfamilyName=[str(x) for x in familyList]\r\nfamilyDict=dict(zip(familyName,familyList))\r\n\r\nclass MyForm(Form):\r\n    def __init__(self):\r\n        # Initialize the form\r\n        self.Text = \"Importance Selection Menu\"\r\n        self.ClientSize = Size(750, 900)\r\n        \r\n        self.dropdowns=[]\r\n\r\n        # Create a label for the whole menu\r\n        self.dropdown_label = Label()\r\n        self.dropdown_label.Text = \"Select Importance of Each Criteria and its Subs:\"\r\n        self.dropdown_label.Location = Point(20, 20)\r\n        self.dropdown_label.AutoSize = True\r\n        self.Controls.Add(self.dropdown_label)\r\n        \r\n        subs=[[1,2],[3,4,5,6],[7,8,9,10],[11,12,13,14,15],[16,17,18],[19],[20,21]]\r\n        mainNames=[\"Project Charechteristic\",\"Supply Chain\",\"Time\",\"Cost\",\"Quality\",\"Procurement\",\"Socio-cultural\"]\r\n        subNames=[[\"Location\",\"Project Design\"],[\"Financing\",\"Available Manufactorer\",\"Available Infrastructure\",\"Experts/Skilled Workers\"],[\"Design Period\",\"Production Time\",\"Mobilization/Transfer time\",\"Assembly/Construction period\"],[\"Design\",\"Manufacturing\",\"Logistics\",\"Assembly/Construction\",\"Maintenance\"],[\"DfMA + disassembly\",\"Standards/Protocols\",\"Sustainability\"],[\"Procurement/delivery method\"],[\"Cultural resistance\",\"Local authority regulation\"]]\r\n        startY=40\r\n        for i in range(len(subs)):\r\n           if i<3:\r\n               startX=20\r\n           elif i==3:\r\n               startY=40 \r\n               startX=300  \r\n           elif i==6:\r\n               startY=40\r\n               startX=550 \r\n           else:\r\n               startX=300\r\n           \r\n           # Create a label for D\r\n           self.dropdown_label = Label()\r\n           self.dropdown_label.Text = \"D\"+str(i+1)+\": \"+mainNames[i]\r\n           self.dropdown_label.Location = Point(startX, startY+5)\r\n           self.dropdown_label.AutoSize = True\r\n           self.Controls.Add(self.dropdown_label)\r\n        \r\n           # Create a dropdown (combobox) for the user input\r\n           self.dropdown = ComboBox()\r\n           self.dropdown.Location = Point(startX+30, startY+30)\r\n           self.dropdown.Size = Size(100, 20)\r\n           self.dropdown.Items.AddRange([\"L\", \"M\", \"H\", \"VH\"])  # Predefined options\r\n           self.Controls.Add(self.dropdown) \r\n           startY=startY+60\r\n        \r\n           for k in range(len(subs[i])):\r\n              # Create a label for D2\r\n              self.dropdown_label = Label()\r\n              self.dropdown_label.Text = \"F\"+str(subs[i][k])+\": \"+subNames[i][k]\r\n              self.dropdown_label.Location = Point(startX+20, startY+5)\r\n              self.dropdown_label.AutoSize = True\r\n              self.Controls.Add(self.dropdown_label)\r\n        \r\n              # Create a dropdown (combobox) for the user input\r\n              self.dropdown = ComboBox()\r\n              self.dropdown.Location = Point(startX+50, startY+30)\r\n              self.dropdown.Size = Size(80, 20)\r\n              self.dropdown.Items.AddRange([\"L\", \"M\", \"H\", \"VH\"])  # Predefined options\r\n              self.Controls.Add(self.dropdown)\r\n              # Add the dropdown to the list\r\n              self.dropdowns.append(self.dropdown)  \r\n              startY=startY+60\r\n           startY=startY+15\r\n\r\n        # Create a button to submit the input\r\n        self.submit_button = Button()\r\n        self.submit_button.Text = \"Submit\"\r\n        self.submit_button.Location = Point(610, 642)\r\n        self.submit_button.Click += self.submit_button_click\r\n        self.Controls.Add(self.submit_button)\r\n                #Create Logo box\r\n      \r\n\r\n        # Load the photo\r\n        path=r\"D:\\Nariman Saze\\narbiman2.png\"\r\n        photo_path = path  # Update with the path to your photo\r\n        photo_image = Image.FromFile(photo_path)\r\n\r\n        # Create a picture box to display the photo\r\n        self.logo_box = PictureBox()\r\n        self.logo_box.Location = Point(600,680)\r\n        self.logo_box.Size=Size(100,100)\r\n        self.logo_box.Image = photo_image\r\n        self.logo_box.SizeMode = PictureBoxSizeMode.Zoom\r\n        \r\n        self.Controls.Add(self.logo_box)\r\n\r\n    def submit_button_click(self, sender, args):\r\n        # Event handler for submit button click\r\n        global inputs\r\n        inputs=[]\r\n        # Get selected nodes from the treeview recursively\r\n        for dropdown in self.dropdowns:\r\n            inputs.append(dropdown.SelectedItem)\r\n        d1 = self.dropdown.Text\r\n        #close the window\r\n        self.Close()\r\n\r\n\r\n\r\n# Create an instance of the form\r\nform = MyForm()\r\nform.ShowDialog()\r\n\r\n\r\n# Assign your output to the OUT variable.\r\nOUT = inputs",
+      "Engine": "CPython3",
+      "EngineName": "CPython3",
+      "VariableInputPorts": true,
+      "Id": "a3213dc14e2e4ff68343f5dd7d798e51",
+      "NodeType": "PythonScriptNode",
+      "Inputs": [
+        {
+          "Id": "4eff22f093f5475cb5c2ff561bd06eac",
+          "Name": "IN[0]",
+          "Description": "Input #0",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "e83d275f4b7d4527a6896420426fb600",
+          "Name": "OUT",
+          "Description": "Result of the python script",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Runs an embedded Python script."
+    },
+    {
+      "ConcreteType": "PythonNodeModels.PythonNode, PythonNodeModels",
+      "Code": "# Load the Python Standard and DesignScript Libraries\r\nimport sys\r\nimport clr\r\nclr.AddReference('ProtoGeometry')\r\nfrom Autodesk.DesignScript.Geometry import *\r\n\r\n# The inputs to this node will be stored as a list in the IN variables.\r\ndataEnteringNode = IN\r\n\r\n# Place your code below this line\r\nimport clr\r\nclr.AddReference('System.Windows.Forms')\r\nclr.AddReference('System.Drawing')\r\n\r\nimport pandas as pd\r\nfrom System.Windows.Forms import Form, Button, DataGridView, DataGridViewAutoSizeColumnsMode,  DataGridViewTextBoxColumn,Label,PictureBox,FormStartPosition,PictureBoxSizeMode,DockStyle\r\nfrom System.Drawing import Point, Size, Image, Bitmap,Font,FontFamily\r\n\r\n\r\ndef create_form_with_table():\r\n    class DynamicForm(Form):\r\n        def __init__(self):\r\n            # Initialize the form\r\n            self.Text = \"FAHP User Input Interface\"\r\n            self.ClientSize = Size(700,550)\r\n            \r\n            # Create a label for the whole menu\r\n            self.title_label = Label()\r\n            self.title_label.Text = \"Introduction\"\r\n            self.title_label.Location = Point(20, 20)\r\n            self.title_label.AutoSize = True\r\n            font = Font(FontFamily.GenericSansSerif,\r\n            12, 1) \r\n            self.title_label.Font=font\r\n            self.Controls.Add(self.title_label)\r\n            \r\n            # Create a label for the whole menu\r\n            self.intro_label = Label()\r\n            self.intro_label.Text = \"During this process wherever suitable the plugin connects to the Revit model to generate the required information and assist the user in inputting information. Moreover, at each step user is provided with two help buttons for more clarification.\"\r\n            self.intro_label.Location = Point(30, 50)\r\n            self.intro_label.Size = Size(670,60)\r\n            font = Font(FontFamily.GenericSansSerif,\r\n            9, 0) \r\n            self.intro_label.Font=font\r\n            self.Controls.Add(self.intro_label)\r\n            \r\n            # Create a label for the whole menu\r\n            self.process_label = Label()\r\n            self.process_label.Text = \"This process is designed in 7 steps as following:\"\r\n            self.process_label.Location = Point(30, 110)\r\n            self.process_label.Size = Size(670,30)\r\n            font = Font(FontFamily.GenericSansSerif,\r\n            9, 0) \r\n            self.process_label.Font=font\r\n            self.Controls.Add(self.process_label)\r\n             # Create a label for the step1\r\n            self.process_step1 = Label()\r\n            self.process_step1.Text = \"Step1: Providing Project spaciatial information (ZIP-Code) and the main Floor Families to measure project Size\"  \r\n            self.process_step1.Location = Point(50, 150)\r\n            self.process_step1.Size = Size(650,60)\r\n            font = Font(FontFamily.GenericSansSerif,\r\n            9, 0) \r\n            self.process_step1.Font=font\r\n            self.Controls.Add(self.process_step1)\r\n            \r\n             # Create a label for the step 2\r\n            self.process_step2 = Label()\r\n            self.process_step2.Text = \"Step2: Selecting the two design alternatives\"      \r\n            self.process_step2.Location = Point(50, 210)\r\n            self.process_step2.Size = Size(670,30)\r\n            font = Font(FontFamily.GenericSansSerif,\r\n            9, 0) \r\n            self.process_step2.Font=font\r\n            self.Controls.Add(self.process_step2)\r\n\r\n             # Create a label for the step 3\r\n      \r\n            self.process_step3 = Label()\r\n            self.process_step3.Text = \"Step3: Weighting the main assessment Criteria \"\r\n            self.process_step3.Location = Point(50, 270)\r\n            self.process_step3.AutoSize = True\r\n            font = Font(FontFamily.GenericSansSerif,\r\n            9, 0) \r\n            self.process_step3.Font=font\r\n            self.Controls.Add(self.process_step3)\r\n            \r\n            # Create a label for the step 4\r\n      \r\n            self.process_step4 = Label()\r\n            self.process_step4.Text = \"Step4: Weighting the sub-Criteria for each main cariterian  \"\r\n            self.process_step4.Location = Point(50, 330)\r\n            self.process_step4.AutoSize = True\r\n            font = Font(FontFamily.GenericSansSerif,\r\n            8, 0) \r\n            self.process_step4.Font=font\r\n            self.Controls.Add(self.process_step4)\r\n            \r\n            # Create a label for the step 5\r\n      \r\n            self.process_step5 = Label()\r\n            self.process_step5.Text = \"Step5: Weighting the performance of design alternatives in each sub-criterian \"\r\n            self.process_step5.Location = Point(50, 390)\r\n            self.process_step5.AutoSize = True\r\n            font = Font(FontFamily.GenericSansSerif,\r\n            8, 0) \r\n            self.process_step5.Font=font\r\n            self.Controls.Add(self.process_step5)  \r\n                      \r\n            # Create a button to submit the input\r\n            self.submit_button = Button()\r\n            self.submit_button.Text = \"Next\"\r\n            self.submit_button.Location = Point(300,450)\r\n            self.submit_button.Click += self.submit_button_click\r\n            self.Controls.Add(self.submit_button)\r\n            \r\n\r\n            #Create Logo box\r\n            # Load the photo\r\n            path=r\"D:\\Nariman Saze\\narbiman2.png\"\r\n            photo_path = path  \r\n            photo_image= Image.FromFile(photo_path)\r\n\r\n            # Create a picture box to display the photo\r\n            self.logo_box = PictureBox()\r\n            self.logo_box.Location = Point(580,450)\r\n            self.logo_box.Size=Size(100,100)\r\n            self.logo_box.Image = photo_image\r\n            self.logo_box.SizeMode = PictureBoxSizeMode.Zoom\r\n            self.Controls.Add(self.logo_box)\r\n\r\n\r\n            \r\n\r\n        def submit_button_click(self, sender, args):\r\n            # Event handler for submit button click\r\n \r\n            self.Close()\r\n\r\n                       \r\n\r\n\r\n    # Create an instance of the dynamic form\r\n    form = DynamicForm()\r\n    form.ShowDialog()\r\n    \r\n    \r\n\r\n\r\n# Example usage:\r\nl=1\r\n\r\ncreate_form_with_table()\r\n\r\n# Assign your output to the OUT variable.\r\nOUT = 1",
+      "Engine": "CPython3",
+      "EngineName": "CPython3",
+      "VariableInputPorts": true,
+      "Id": "81a7bcfa52e84cc49ea3261d8a954b74",
+      "NodeType": "PythonScriptNode",
+      "Inputs": [
+        {
+          "Id": "50ffd3b626fd445abd84c1b543b726bd",
+          "Name": "IN[0]",
+          "Description": "Input #0",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "2ae0b3bb439c4cd78767da38b7d1460e",
+          "Name": "OUT",
+          "Description": "Result of the python script",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Runs an embedded Python script."
+    },
+    {
+      "ConcreteType": "PythonNodeModels.PythonNode, PythonNodeModels",
+      "Code": "# Load the Python Standard and DesignScript Libraries\r\nimport sys\r\nimport clr\r\nclr.AddReference('ProtoGeometry')\r\nfrom Autodesk.DesignScript.Geometry import *\r\n\r\n# The inputs to this node will be stored as a list in the IN variables.\r\ndataEnteringNode = IN\r\n\r\n# Place your code below this line\r\nimport clr\r\nclr.AddReference('System.Windows.Forms')\r\nfrom System.Windows.Forms import MessageBox,MessageBoxButtons, MessageBoxIcon\r\n\r\n# Define the custom content as a string\r\nrank = \"Welcome to our Revit Plugin! Harness the power of Fuzzy Analytical Hierarchy Process (FAHP) Method for informed decision-making in building system selection. Simplify your choices, and optimize efficiency.\"\r\n#rank=\"1st Alternative Score is \" +str(round(final.iloc[:,1].sum(),3))+\"\\n2nd Alternative Score is \" +str(round(final.iloc[:,2].sum(),3))\r\n# Define the font for the message box\r\n\r\n\r\n# Show the MessageBox with custom settings\r\nresult = MessageBox.Show(None, rank, \"FAHAP UI\", MessageBoxButtons.OK, MessageBoxIcon.Information)\r\n# Assign your output to the OUT variable.\r\nOUT = 0",
+      "Engine": "CPython3",
+      "EngineName": "CPython3",
+      "VariableInputPorts": true,
+      "Id": "667deed43f4247ac80c64e73aad8000d",
+      "NodeType": "PythonScriptNode",
+      "Inputs": [
+        {
+          "Id": "c53257c0b06e4c788491c2a95c206477",
+          "Name": "IN[0]",
+          "Description": "Input #0",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "7227a3e3dce745ae8998552ea8fb02eb",
+          "Name": "OUT",
+          "Description": "Result of the python script",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Runs an embedded Python script."
+    },
+    {
+      "ConcreteType": "DSRevitNodesUI.Categories, DSRevitNodesUI",
+      "SelectedIndex": 725,
+      "SelectedString": "OST_Walls",
+      "Id": "05bc25dcb2f84fd4b2bf5383366fc095",
+      "NodeType": "ExtensionNode",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "ab4f7c806cca4d909eff0530a310cdb5",
+          "Name": "Category",
+          "Description": "The selected Category.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "All built-in categories."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Function, DynamoCore",
+      "FunctionSignature": "65f93a80-674c-4a98-9d0c-db3a138287e5",
+      "FunctionType": "Graph",
+      "Id": "3d97cbcd8ebc4a81a9d5990a0d988fd9",
+      "NodeType": "FunctionNode",
+      "Inputs": [
+        {
+          "Id": "f1d97dbe85f04c2b837948db71e7c4f7",
+          "Name": "category",
+          "Description": " Works with categories, BuiltInCategories and BuiltInCategories as strings\n\nvar[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "0536e9453b7d44e380468a30eab0ba04",
+          "Name": "toggle",
+          "Description": "bool\nDefault value : true",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "ea1608d03c3843c5874d4d2a54c1b867",
+          "Name": "docOrRevitLinkInstance",
+          "Description": " Use only if you want to query a linked model\n\nvar\nDefault value : null",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "c05ce9134c7049feb801ce9b658ee63f",
+          "Name": "familyTypes",
+          "Description": "return value",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Gets all family types/symbols of a given category in the model."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "Id": "95db3e5340c9464c8271d4b5d25a90d9",
+      "NodeType": "FunctionNode",
+      "Inputs": [
+        {
+          "Id": "7d0337da87114e2d9e71cfd6dc285f29",
+          "Name": "familyType",
+          "Description": "Revit.Elements.FamilyType",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "a9c8eb82188343e39e02ae5b755b12b2",
+          "Name": "string",
+          "Description": "string",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "FunctionSignature": "Revit.Elements.FamilyType.Name",
+      "Replication": "Auto",
+      "Description": "Get the name of this Family Type\n\nFamilyType.Name: string"
+    },
+    {
+      "ConcreteType": "PythonNodeModels.PythonNode, PythonNodeModels",
+      "Code": "# Load the Python Standard and DesignScript Libraries\r\nimport sys\r\nimport clr\r\nclr.AddReference('ProtoGeometry')\r\nclr.AddReference('System.Windows.Forms')\r\nclr.AddReference('System.Drawing')\r\nfrom Autodesk.DesignScript.Geometry import *\r\nfrom System.Windows.Forms import Form, Label, Button, TextBox, ComboBox, TreeNode, TreeView,PictureBox,PictureBoxSizeMode\r\nfrom System.Drawing import Point, Size,Image\r\n# The inputs to this node will be stored as a list in the IN variables.\r\ndataEnteringNode = IN\r\n\r\n# Place your code below this line\r\nfamilyList=IN[0]\r\nfamilyName=IN[1]\r\n#familyName=[str(x) for x in familyList]\r\nfamilyDict=dict(zip(familyName,familyList))\r\n\r\nclass MyForm(Form):\r\n    def __init__(self):\r\n        # Initialize the form\r\n        self.Text = \"FAHP User Input Interface\"\r\n        self.ClientSize = Size(350, 400)\r\n\r\n\r\n        # Create a label for the dropdown(ALT1)\r\n        self.dropdown_label_1 = Label()\r\n        self.dropdown_label_1.Text = \"Select a Family for Alternative 1:\"\r\n        self.dropdown_label_1.Location = Point(20, 30)\r\n        self.dropdown_label_1.AutoSize = True\r\n        self.Controls.Add(self.dropdown_label_1)\r\n\r\n        # Create a dropdown (combobox) for the user input\r\n        self.dropdown_1 = ComboBox()\r\n        self.dropdown_1.Location = Point(20, 60)\r\n        self.dropdown_1.Size = Size(200, 20)\r\n        self.dropdown_1.Items.AddRange(familyName)  \r\n        self.Controls.Add(self.dropdown_1)\r\n        \r\n        # Create a label for the dropdown(ALT2)\r\n        self.dropdown_label_2 = Label()\r\n        self.dropdown_label_2.Text = \"Select a Family for Alternative 2:\"\r\n        self.dropdown_label_2.Location = Point(20, 110)\r\n        self.dropdown_label_2.AutoSize = True\r\n        self.Controls.Add(self.dropdown_label_2)\r\n\r\n        # Create a dropdown (combobox) for the user input\r\n        self.dropdown_2 = ComboBox()\r\n        self.dropdown_2.Location = Point(20, 130)\r\n        self.dropdown_2.Size = Size(200, 20)\r\n        self.dropdown_2.Items.AddRange(familyName)  \r\n        self.Controls.Add(self.dropdown_2)\r\n        # Create a label for the treeview\r\n        #self.tree_label = Label()\r\n        #self.tree_label.Text = \"Select Main Floor Families:\"\r\n        #self.tree_label.Location = Point(20, 80)\r\n        #self.tree_label.AutoSize = True\r\n        #self.Controls.Add(self.tree_label)\r\n\r\n        # Create a treeview for the user input\r\n        #self.treeview = TreeView()\r\n        #self.treeview.Location = Point(20, 100)\r\n        #self.treeview.Size = Size(300, 200)\r\n        #self.treeview.CheckBoxes = True  # Enable checkboxes for multiple selections\r\n        #for family in familyName:\r\n           #self.treeview.Nodes.Add(family)  # Add a root node\r\n        \r\n        #self.Controls.Add(self.treeview)\r\n\r\n        # Create a button to submit the input\r\n        self.submit_button = Button()\r\n        self.submit_button.Text = \"Submit\"\r\n        self.submit_button.Location = Point(20, 320)\r\n        self.submit_button.Click += self.submit_button_click\r\n        self.Controls.Add(self.submit_button)\r\n            \r\n        #Create Logo box\r\n      \r\n\r\n        # Load the photo\r\n        path=r\"D:\\Nariman Saze\\narbiman2.png\"\r\n        photo_path = path  # Update with the path to your photo\r\n        photo_image = Image.FromFile(photo_path)\r\n\r\n        # Create a picture box to display the photo\r\n        self.logo_box = PictureBox()\r\n        self.logo_box.Location = Point(220,300)\r\n        self.logo_box.Size=Size(100,100)\r\n        self.logo_box.Image = photo_image\r\n        self.logo_box.SizeMode = PictureBoxSizeMode.Zoom\r\n        \r\n        self.Controls.Add(self.logo_box)\r\n            \r\n    def submit_button_click(self, sender, args):\r\n        # Event handler for submit button click\r\n        global selected_items\r\n        #selected_items.clear()\r\n        selected_items=[self.dropdown_1.SelectedItem,self.dropdown_2.SelectedItem]\r\n        # Clear the list before adding new items\r\n        \r\n        # Get selected nodes from the treeview recursively\r\n        \r\n        #zipCode = self.textbox.Text\r\n        self.Close()\r\n\r\n\r\n\r\n# Create an instance of the form\r\nform = MyForm()\r\nform.ShowDialog()\r\n\r\n\r\n# Assign your output to the OUT variable.\r\nOUT = [[familyDict[selected_items[0]],familyDict[selected_items[1]]],selected_items]",
+      "Engine": "CPython3",
+      "EngineName": "CPython3",
+      "VariableInputPorts": true,
+      "Id": "71ae9a65fe1f4fdab29aeefaaa87c053",
+      "NodeType": "PythonScriptNode",
+      "Inputs": [
+        {
+          "Id": "675d4436cdbc4059b0e2dc9cbc797014",
+          "Name": "IN[0]",
+          "Description": "Input #0",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "3e110087884846958d7cfea6dce9604c",
+          "Name": "IN[1]",
+          "Description": "Input #1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "73a02c6712ad4dfd970b4590f3755381",
+          "Name": "IN[2]",
+          "Description": "Input #2",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "6e7f2197fc6a450884db94e6c012150d",
+          "Name": "OUT",
+          "Description": "Result of the python script",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Runs an embedded Python script."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "Id": "e9b38ac8dd49415a99e5342de824254f",
+      "NodeType": "CodeBlockNode",
+      "Inputs": [
+        {
+          "Id": "b51efecfd0af4f4eba9bee8b868d6107",
+          "Name": "alternatives",
+          "Description": "alternatives",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "e645276c78694553b5571aeea120a70c",
+          "Name": "",
+          "Description": "Value of expression at line 1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "cfe01b33e9d242b6ad7a988db2e5fe5c",
+          "Name": "",
+          "Description": "alter_names",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "128fa64f47c14f059551136b0e1ea51b",
+          "Name": "",
+          "Description": "alter_items",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly",
+      "Code": "alternatives;\nalter_names=alternatives[1];\nalter_items=alternatives[0];"
+    },
+    {
+      "ConcreteType": "PythonNodeModels.PythonNode, PythonNodeModels",
+      "Code": "# Load the Python Standard and DesignScript Libraries\r\n\r\nimport clr\r\nclr.AddReference('RevitAPI')\r\nfrom Autodesk.Revit.DB import *\r\nfrom Autodesk.Revit.UI import TaskDialog, UIApplication, UIDocument, PostableCommand\r\n\r\nclr.AddReference('RevitServices')\r\nimport RevitServices\r\nfrom RevitServices.Persistence import DocumentManager\r\n\r\nclr.AddReference('System.Drawing')\r\nfrom System.Drawing import Size, Point\r\n\r\nclr.AddReference('System.Windows.Forms')\r\nfrom System.Windows.Forms import Application, Button, Form, Label, TextBox\r\n\r\ndoc = DocumentManager.Instance.CurrentDBDocument\r\nuiapp = DocumentManager.Instance.CurrentUIApplication\r\napp = uiapp.Application\r\nfamily=IN[0][0][0]\r\ndef open_family_type_properties_dialog(family_type):\r\n    \"\"\"\r\n    Opens the Type Properties panel for the given FamilySymbol (family type).\r\n    \r\n    Args:\r\n        family_type (FamilySymbol): The FamilySymbol (family type) for which to open the Type Properties panel.\r\n    \"\"\"\r\n    try:\r\n        uiapp = __revit__.UIApplication\r\n        uiapp.PostCommand(PostableCommand.FamilyTypes)\r\n    except Exception as ex:\r\n        print(\"Error:\", ex)\r\n\r\na=open_family_type_properties_dialog(family)\r\n# Assign your output to the OUT variable.\r\n\r\n# Assign your output to the OUT variable.\r\nOUT = 11221",
+      "Engine": "CPython3",
+      "EngineName": "CPython3",
+      "VariableInputPorts": true,
+      "Id": "0501a3a3d8e5404e8e5aa14f3e585455",
+      "NodeType": "PythonScriptNode",
+      "Inputs": [
+        {
+          "Id": "44f789ef3f444af1981534f66b6adfd9",
+          "Name": "IN[0]",
+          "Description": "Input #0",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "c20cde3369f345b399db55bc193880f9",
+          "Name": "OUT",
+          "Description": "Result of the python script",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Runs an embedded Python script."
+    }
+  ],
+  "Connectors": [
+    {
+      "Start": "26615fb4aba04d6c98da0d7a142f8bbf",
+      "End": "a8ec6c003fd04db99d76d8155749e5ce",
+      "Id": "0de53638a1fb4a968ddec4a4ae6e2352",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "19f690f084fe4560a6862953746608db",
+      "End": "11a9220684bf432da1f9dba1bdc2f99d",
+      "Id": "bfde3f563df249a9ae179e0da50f78b0",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "9b5e275702c34ee5af93e7991c3c6b1e",
+      "End": "fc61c42dec8449e3b9f2711dddf4dfef",
+      "Id": "ff7f24224a844a529b5abc831f27a990",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "9c9c9034db304f1fb13c70b829bdf4b9",
+      "End": "54b22b81bbc94a819b0981eee6af460f",
+      "Id": "2258cc3abcb24284bafb952c3e85e9ec",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "b77bf10863fb4720a48c0cdca972b073",
+      "End": "76199d6858474a3994b748ac5552a18a",
+      "Id": "80bc6d9ebef5466b9b370eee002a7433",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "94329edc2ea7498b81fa7d5c57bf09eb",
+      "End": "3d62148105264ca28419766d8d2655e1",
+      "Id": "fda98ad97da44f5d86b358198080b465",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "f76515410b6a4e9b9e75ce4997fd35d9",
+      "End": "effd1b8bdffc4a79904cb1ef745a5059",
+      "Id": "8b2a09b3f8c947a9bb1cb89501e59a4c",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "e28fbfbeaee64f169c508b9cb292ca6d",
+      "End": "65f2d15c425e449f992005e97891c7b4",
+      "Id": "1ec649e7cec8426785804b8db5deed3c",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "202b99c1f9f443bbbb8095f17f6d086e",
+      "End": "c5147c99eb9b4f62b4dabdd9eb3f8bb1",
+      "Id": "aad3b006188f420f9fed9aa3982df5f4",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "202b99c1f9f443bbbb8095f17f6d086e",
+      "End": "4252d1dd32ce48dd8b2f61c530683535",
+      "Id": "ecbc0b7adff34cca8d741214439334e0",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "ff7f55e25f46438f961d59f604e1cab1",
+      "End": "c30652f88db34dbc83bdcbb755ff71ad",
+      "Id": "6ac4523372c9417b8d3614f3ba5cb77a",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "2e3fcd2733cd427888e9d983496ffff7",
+      "End": "73a02c6712ad4dfd970b4590f3755381",
+      "Id": "8821c8303e2148dd88d0c25f44aeee14",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "2e3fcd2733cd427888e9d983496ffff7",
+      "End": "670ecc86f7fb483f9a29b9aa2c8e4a58",
+      "Id": "517a301b5d5e4fa2ad9c0ee3b23a1385",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "2e3fcd2733cd427888e9d983496ffff7",
+      "End": "44f789ef3f444af1981534f66b6adfd9",
+      "Id": "fda504eb914943069db317fd645394b2",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "2e39db88064344c58ecb9ed9ef3edc0e",
+      "End": "63f46ba421de44b39d20fe117c7c8561",
+      "Id": "cdd636b968f2444c9fbf5782250a62da",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "a8e1fefee27e4255965f593ea4982bee",
+      "End": "3e22669e6fc344da8c851fc4ce28359d",
+      "Id": "0e0b5983229d40e9a108220c467e5b0e",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "a8e1fefee27e4255965f593ea4982bee",
+      "End": "6a1d91ae8a8447fb8c40a4d290f52e8d",
+      "Id": "58bfa9ad7b5443da963d6adb347770aa",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "e6b40cb5111b41c5a7a87e230d9846d3",
+      "End": "c858bbfd4e5c4f2395782573674a0536",
+      "Id": "1b031002719c4bf2b8778d5b49cd86a4",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "1593e638f2e94e2eae20378188ffa33c",
+      "End": "608d57eaff854e51ae2e4846a6a3255d",
+      "Id": "80499c0544444d42816d5c5e68203ca2",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "1593e638f2e94e2eae20378188ffa33c",
+      "End": "e37a96ef199340a6954c512d938ec21b",
+      "Id": "a638633698cd43968cfa4f5018ffca71",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "d35d4ec2ad644dc09033a52d3293f4aa",
+      "End": "da8df9e7a16749989817b80621c4b39b",
+      "Id": "d46a271e1c954584bc995c25b70f4176",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "75521a1f12a84f0fb56af65a7ec1859e",
+      "End": "058516bcde594f85abf1f899f13c929f",
+      "Id": "cd32313e6cdd429bbbf1c43fbee09c57",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "6c71cb1040c2458285a3392cac2422dc",
+      "End": "9660f23b23304b2dbc3d0fb29b9a1a9a",
+      "Id": "04bc510657514b8fa5a79b6a9d07bfcc",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "60dcfcd00fc24fe18b507d4712377407",
+      "End": "b0dae44f019341f58690bf7200680dcf",
+      "Id": "d4d3741975e444db8efe65ce33da08f4",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "207982b8910848c69d962d399e1d4806",
+      "End": "87241cf66d2e497a853ffd0943c09859",
+      "Id": "1a52e73cdc584de0968520fbc94e8a50",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "4d83de8d771b4646b8a62f7c940b74b0",
+      "End": "a7c24b75925b4390a0f59848b34a6175",
+      "Id": "82bdcd7d194148d497545653c090cd3f",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "0350c901da534c5899d4a02b82728c61",
+      "End": "4f9c052381904b32ba266c94eeb326c7",
+      "Id": "69b17e6df8b14b1f9d67a979fc339d03",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "0350c901da534c5899d4a02b82728c61",
+      "End": "b2f6cd396ee842ad8149f543b5dde0c7",
+      "Id": "f65720503aae4c379bd9ab7b0ca1363b",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "e83d275f4b7d4527a6896420426fb600",
+      "End": "7e0004a79cc140bc8648a12e1ba3afef",
+      "Id": "c1479fa37c544c59a3f2ad8f57e8d02e",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "2ae0b3bb439c4cd78767da38b7d1460e",
+      "End": "eea37ecbc105439391094d8a725af2dc",
+      "Id": "f9f5cf88a7114539a814aab78dd5758d",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "7227a3e3dce745ae8998552ea8fb02eb",
+      "End": "50ffd3b626fd445abd84c1b543b726bd",
+      "Id": "e1b930c7c30444fea835f50f69ca1d4d",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "ab4f7c806cca4d909eff0530a310cdb5",
+      "End": "f1d97dbe85f04c2b837948db71e7c4f7",
+      "Id": "1741d1c0c9434923b305e252f3274c10",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "c05ce9134c7049feb801ce9b658ee63f",
+      "End": "7d0337da87114e2d9e71cfd6dc285f29",
+      "Id": "639ec07b74a74b24b5e028aea2e1de82",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "c05ce9134c7049feb801ce9b658ee63f",
+      "End": "675d4436cdbc4059b0e2dc9cbc797014",
+      "Id": "bf1dcdea1135400686afe4fefa55ca16",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "a9c8eb82188343e39e02ae5b755b12b2",
+      "End": "3e110087884846958d7cfea6dce9604c",
+      "Id": "ec39227a794447dba521abe374c27922",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "6e7f2197fc6a450884db94e6c012150d",
+      "End": "b51efecfd0af4f4eba9bee8b868d6107",
+      "Id": "2a8818131bba4d76b52e222de8e82c4c",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "e645276c78694553b5571aeea120a70c",
+      "End": "4eff22f093f5475cb5c2ff561bd06eac",
+      "Id": "132baf65dc7144dfa6710aacd4b14e0a",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "cfe01b33e9d242b6ad7a988db2e5fe5c",
+      "End": "c0a5b377029746bb87e19d8636f0c02a",
+      "Id": "6f20037f8b5e40b8a8d79fd94bdeb0d1",
+      "IsHidden": "False"
+    }
+  ],
+  "Dependencies": [
+    "65f93a80-674c-4a98-9d0c-db3a138287e5",
+    "25478d38-ba0e-4dc7-826e-fe45f3f811c6"
+  ],
+  "NodeLibraryDependencies": [
+    {
+      "Name": "GenerativeDesign",
+      "Version": "6.0.2.0",
+      "ReferenceType": "Package",
+      "Nodes": [
+        "5cabe74149ea4ea3917022026cf9ff41",
+        "104a3b27dd1b4455804971bf51ac399c",
+        "5b2243acdb264b47a28dd8a4048c40de",
+        "1200fa0385974bcc954083f1bd8aa6c5"
+      ]
+    },
+    {
+      "Name": "Clockwork for Dynamo 2.x",
+      "Version": "2.3.0",
+      "ReferenceType": "Package",
+      "Nodes": [
+        "1ca6424435ad4a0caf9416c04128dab9",
+        "54ada116cf9143369b6b65fb4b10bf29",
+        "3d97cbcd8ebc4a81a9d5990a0d988fd9"
+      ]
+    }
+  ],
+  "Thumbnail": "",
+  "GraphDocumentationURL": null,
+  "ExtensionWorkspaceData": [
+    {
+      "ExtensionGuid": "28992e1d-abb9-417f-8b1b-05e053bee670",
+      "Name": "Properties",
+      "Version": "2.18",
+      "Data": {}
+    },
+    {
+      "ExtensionGuid": "DFBD9CC0-DB40-457A-939E-8C8555555A9D",
+      "Name": "Generative Design",
+      "Version": "6.0",
+      "Data": {}
+    }
+  ],
+  "Author": "",
+  "Linting": {
+    "activeLinter": "None",
+    "activeLinterId": "7b75fb44-43fd-4631-a878-29f4d5d8399a",
+    "warningCount": 0,
+    "errorCount": 0
+  },
+  "Bindings": [],
+  "View": {
+    "Dynamo": {
+      "ScaleFactor": 1.0,
+      "HasRunWithoutCrash": true,
+      "IsVisibleInDynamoLibrary": true,
+      "Version": "2.18.1.5096",
+      "RunType": "Automatic",
+      "RunPeriod": "1000"
+    },
+    "Camera": {
+      "Name": "_Background Preview",
+      "EyeX": -17.0,
+      "EyeY": 24.0,
+      "EyeZ": 50.0,
+      "LookX": 12.0,
+      "LookY": -13.0,
+      "LookZ": -58.0,
+      "UpX": 0.0,
+      "UpY": 1.0,
+      "UpZ": 0.0
+    },
+    "ConnectorPins": [],
+    "NodeViews": [
+      {
+        "Id": "5cabe74149ea4ea3917022026cf9ff41",
+        "Name": "Data.Remember",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": false,
+        "X": -1135.1104871408584,
+        "Y": -712.14838298881557
+      },
+      {
+        "Id": "e8b9386864724297a5d8f02ff959f95d",
+        "Name": "Categories",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": -7529.4466194090965,
+        "Y": -775.1297635514461
+      },
+      {
+        "Id": "1ca6424435ad4a0caf9416c04128dab9",
+        "Name": "All Family Types Of Category",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": -7189.0977326371758,
+        "Y": -779.3023412188985
+      },
+      {
+        "Id": "0df3b598db904079a7226e853e75e0c3",
+        "Name": "Code Block",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": -4505.6178492905819,
+        "Y": -749.81208785020772
+      },
+      {
+        "Id": "44f2ce1ca4de418bb85ef540e71e34e7",
+        "Name": "List.Flatten",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": -4109.7457300173119,
+        "Y": -689.42353949751316
+      },
+      {
+        "Id": "2af1e349752c4e3aa8cfb85306045c4a",
+        "Name": "Element.GetParameterValueByName",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": -3449.9378006859815,
+        "Y": -696.46041621962218
+      },
+      {
+        "Id": "7508f124cf214318b9f743955f1a9be3",
+        "Name": "Code Block",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": -3586.7093813690508,
+        "Y": -530.6521808754112
+      },
+      {
+        "Id": "9b7e2d4e6f1e480095ae0d894caaa892",
+        "Name": "List.Flatten",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": -3071.6165025341516,
+        "Y": -770.66034373712716
+      },
+      {
+        "Id": "5516977294254cccac87d11ba17e723e",
+        "Name": "Math.Sum",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": -2842.3492280438618,
+        "Y": -847.08276856722262
+      },
+      {
+        "Id": "54ada116cf9143369b6b65fb4b10bf29",
+        "Name": "All Elements of Family Type+",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": -3890.397457217412,
+        "Y": -720.67142930202124
+      },
+      {
+        "Id": "ec34d07ed6214003bb72067bb0394ba4",
+        "Name": "Python Script",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": -6507.88012492976,
+        "Y": -719.72588491919407
+      },
+      {
+        "Id": "b18497d46c004460af21b1dce3d3a822",
+        "Name": "List.Flatten",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": -6800.360969912469,
+        "Y": -777.007186962392
+      },
+      {
+        "Id": "1384a09c441247739f4f683e79ba407b",
+        "Name": "Python Script",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": -1638.8078322920865,
+        "Y": -805.17482896814329
+      },
+      {
+        "Id": "8ea396139b8d49a8bb00bd6ef87e7699",
+        "Name": "Code Block",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": -2494.4579455089897,
+        "Y": -804.70496952823612
+      },
+      {
+        "Id": "7ecb2d38b38a4cb1a6bde7f490150402",
+        "Name": "Python Script",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": false,
+        "X": -388.10695333301192,
+        "Y": -834.86529894074874
+      },
+      {
+        "Id": "e73fdce8fe2b425ebde40e9a2171e620",
+        "Name": "Code Block",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": false,
+        "X": -819.21232654403366,
+        "Y": -740.72961850424338
+      },
+      {
+        "Id": "7d7c6b04f27941f4978926b1c7071b90",
+        "Name": "Python Script",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": -3.7637145292144396,
+        "Y": -669.48292078487225
+      },
+      {
+        "Id": "104a3b27dd1b4455804971bf51ac399c",
+        "Name": "Data.Remember",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": -1368.9754346128973,
+        "Y": -710.34584474581163
+      },
+      {
+        "Id": "5b2243acdb264b47a28dd8a4048c40de",
+        "Name": "Data.Remember",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 156.03312804359484,
+        "Y": -958.98884739076948
+      },
+      {
+        "Id": "1200fa0385974bcc954083f1bd8aa6c5",
+        "Name": "Data.Remember",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 283.02400545866021,
+        "Y": -650.43797499933544
+      },
+      {
+        "Id": "06659335d845424aa30405da088bb2bc",
+        "Name": "Python Script",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 891.35529973898019,
+        "Y": -763.19868879288413
+      },
+      {
+        "Id": "c669e0c6e618453899357ffdec2e9e2c",
+        "Name": "Python Script",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 1132.0337925782476,
+        "Y": -692.03877770484
+      },
+      {
+        "Id": "491c54a8e5044378a98147da492e0b07",
+        "Name": "Python Script",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": true,
+        "ShowGeometry": true,
+        "X": 1011.9495711553514,
+        "Y": -907.48347378992389
+      },
+      {
+        "Id": "76b7356961fe4aad96f59b052f551774",
+        "Name": "Python Script",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": true,
+        "ShowGeometry": true,
+        "X": -4602.4970117476423,
+        "Y": -572.327140656646
+      },
+      {
+        "Id": "a3213dc14e2e4ff68343f5dd7d798e51",
+        "Name": "Python Script",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": -4924.258419398534,
+        "Y": -550.1748111878951
+      },
+      {
+        "Id": "81a7bcfa52e84cc49ea3261d8a954b74",
+        "Name": "Python Script",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": -7842.2264946837167,
+        "Y": -769.9393854920479
+      },
+      {
+        "Id": "667deed43f4247ac80c64e73aad8000d",
+        "Name": "Python Script",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": -8172.1190328464472,
+        "Y": -758.892474810507
+      },
+      {
+        "Id": "05bc25dcb2f84fd4b2bf5383366fc095",
+        "Name": "Categories",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": true,
+        "ShowGeometry": true,
+        "X": -6234.0710874345086,
+        "Y": -910.24749607813442
+      },
+      {
+        "Id": "3d97cbcd8ebc4a81a9d5990a0d988fd9",
+        "Name": "All Family Types Of Category",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": -5889.243722892591,
+        "Y": -931.66568023351908
+      },
+      {
+        "Id": "95db3e5340c9464c8271d4b5d25a90d9",
+        "Name": "FamilyType.Name",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": -5529.2331199128885,
+        "Y": -812.44622200497486
+      },
+      {
+        "Id": "71ae9a65fe1f4fdab29aeefaaa87c053",
+        "Name": "Python Script",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": -5292.9281175642,
+        "Y": -926.974428387062
+      },
+      {
+        "Id": "e9b38ac8dd49415a99e5342de824254f",
+        "Name": "Code Block",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": -5097.33997142451,
+        "Y": -950.72376778261923
+      },
+      {
+        "Id": "0501a3a3d8e5404e8e5aa14f3e585455",
+        "Name": "Python Script",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": -6927.7271078424428,
+        "Y": -444.38582477473693
+      }
+    ],
+    "Annotations": [
+      {
+        "Id": "e0e97a90d4a9400ba7ffa010ba9c8b7f",
+        "Title": "ZipCode and Family Input",
+        "DescriptionText": "Description <Double click here to edit group description>",
+        "IsExpanded": true,
+        "WidthAdjustment": 0.0,
+        "HeightAdjustment": 0.0,
+        "Nodes": [
+          "e8b9386864724297a5d8f02ff959f95d",
+          "1ca6424435ad4a0caf9416c04128dab9",
+          "ec34d07ed6214003bb72067bb0394ba4",
+          "b18497d46c004460af21b1dce3d3a822"
+        ],
+        "HasNestedGroups": false,
+        "Left": -7539.4466194090965,
+        "Top": -851.70234121889848,
+        "Width": 1215.9664944793358,
+        "Height": 295.77645629970448,
+        "FontSize": 36.0,
+        "GroupStyleId": "00000000-0000-0000-0000-000000000000",
+        "InitialTop": -779.3023412188985,
+        "InitialHeight": 204.57645629970443,
+        "TextblockHeight": 62.4,
+        "Background": "#FFC1D676"
+      },
+      {
+        "Id": "e7d6fea07f68412c85302ea0c7b5096d",
+        "Title": "Area Calculator",
+        "DescriptionText": "Description <Double click here to edit group description>",
+        "IsExpanded": true,
+        "WidthAdjustment": 0.0,
+        "HeightAdjustment": 0.0,
+        "Nodes": [
+          "0df3b598db904079a7226e853e75e0c3",
+          "44f2ce1ca4de418bb85ef540e71e34e7",
+          "2af1e349752c4e3aa8cfb85306045c4a",
+          "7508f124cf214318b9f743955f1a9be3",
+          "9b7e2d4e6f1e480095ae0d894caaa892",
+          "5516977294254cccac87d11ba17e723e",
+          "54ada116cf9143369b6b65fb4b10bf29",
+          "76b7356961fe4aad96f59b052f551774"
+        ],
+        "HasNestedGroups": false,
+        "Left": -4612.4970117476423,
+        "Top": -919.48276856722259,
+        "Width": 1988.1477837037805,
+        "Height": 520.63058769181134,
+        "FontSize": 36.0,
+        "GroupStyleId": "00000000-0000-0000-0000-000000000000",
+        "InitialTop": -847.08276856722262,
+        "InitialHeight": 461.43058769181141,
+        "TextblockHeight": 62.4,
+        "Background": "#FFC1D676"
+      },
+      {
+        "Id": "9e12fb820aa34c22ad594330a08e9a1b",
+        "Title": "Main Criteria D",
+        "DescriptionText": "Description <Double click here to edit group description>",
+        "IsExpanded": true,
+        "WidthAdjustment": 0.0,
+        "HeightAdjustment": 0.0,
+        "Nodes": [
+          "1384a09c441247739f4f683e79ba407b",
+          "8ea396139b8d49a8bb00bd6ef87e7699",
+          "104a3b27dd1b4455804971bf51ac399c"
+        ],
+        "HasNestedGroups": false,
+        "Left": -2504.4579455089897,
+        "Top": -877.57482896814327,
+        "Width": 1337.4825108960924,
+        "Height": 299.02898422233159,
+        "FontSize": 36.0,
+        "GroupStyleId": "00000000-0000-0000-0000-000000000000",
+        "InitialTop": -805.17482896814329,
+        "InitialHeight": 239.82898422233166,
+        "TextblockHeight": 62.4,
+        "Background": "#FFD4B6DB"
+      },
+      {
+        "Id": "382f7675ed644bd594f3db54f1113623",
+        "Title": "Sub Criteria-Ds",
+        "DescriptionText": "Description <Double click here to edit group description>",
+        "IsExpanded": true,
+        "WidthAdjustment": 0.0,
+        "HeightAdjustment": 0.0,
+        "Nodes": [
+          "5cabe74149ea4ea3917022026cf9ff41",
+          "7ecb2d38b38a4cb1a6bde7f490150402",
+          "e73fdce8fe2b425ebde40e9a2171e620"
+        ],
+        "HasNestedGroups": false,
+        "Left": -1145.1104871408584,
+        "Top": -907.26529894074872,
+        "Width": 941.40353380784643,
+        "Height": 339.71691595193317,
+        "FontSize": 36.0,
+        "GroupStyleId": "00000000-0000-0000-0000-000000000000",
+        "InitialTop": -834.86529894074874,
+        "InitialHeight": 267.71691595193317,
+        "TextblockHeight": 62.4,
+        "Background": "#FFFFC999"
+      },
+      {
+        "Id": "bb6740606d8f4337b7eb2281eee1f07f",
+        "Title": "fs",
+        "DescriptionText": "Description <Double click here to edit group description>",
+        "IsExpanded": true,
+        "WidthAdjustment": 0.0,
+        "HeightAdjustment": 0.0,
+        "Nodes": [
+          "7d7c6b04f27941f4978926b1c7071b90",
+          "1200fa0385974bcc954083f1bd8aa6c5"
+        ],
+        "HasNestedGroups": false,
+        "Left": -13.76371452921444,
+        "Top": -741.88292078487223,
+        "Width": 498.78771998787465,
+        "Height": 223.24494578553674,
+        "FontSize": 36.0,
+        "GroupStyleId": "00000000-0000-0000-0000-000000000000",
+        "InitialTop": -669.48292078487225,
+        "InitialHeight": 164.04494578553681,
+        "TextblockHeight": 62.4,
+        "Background": "#FFFFB8D8"
+      },
+      {
+        "Id": "b1bd199953f7466f8e9cbf3b79d32cb0",
+        "Title": "FamilySelection UI",
+        "DescriptionText": "Description <Double click here to edit group description>",
+        "IsExpanded": true,
+        "WidthAdjustment": 0.0,
+        "HeightAdjustment": 0.0,
+        "Nodes": [
+          "05bc25dcb2f84fd4b2bf5383366fc095",
+          "3d97cbcd8ebc4a81a9d5990a0d988fd9",
+          "95db3e5340c9464c8271d4b5d25a90d9",
+          "71ae9a65fe1f4fdab29aeefaaa87c053",
+          "e9b38ac8dd49415a99e5342de824254f"
+        ],
+        "HasNestedGroups": false,
+        "Left": -6244.0710874345086,
+        "Top": -1023.1237677826192,
+        "Width": 1550.3311160099993,
+        "Height": 342.47754577764431,
+        "FontSize": 36.0,
+        "GroupStyleId": "00000000-0000-0000-0000-000000000000",
+        "InitialTop": -950.72376778261923,
+        "InitialHeight": 283.27754577764438,
+        "TextblockHeight": 62.4,
+        "Background": "#FFC1D676"
+      }
+    ],
+    "X": 5815.9010140223672,
+    "Y": 611.98486205098038,
+    "Zoom": 0.82005922196750791
+  }
+}
